@@ -1,6 +1,20 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { App } from './app/app';
+import { provideRouter } from '@angular/router';
+import { routes } from './app/app.routes';
+import { LucideAngularModule, Home, Goal, BookOpen, BarChart3 } from 'lucide-angular';
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(App, {
+  providers: [
+    provideRouter(routes),
+    {
+      provide: LucideAngularModule,
+      useValue: LucideAngularModule.pick({
+        Home,
+        Goal,
+        BookOpen,
+        BarChart3
+      })
+    }
+  ]
+});

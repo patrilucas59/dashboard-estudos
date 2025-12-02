@@ -1,9 +1,15 @@
 import { Component, signal } from '@angular/core';
-import { Hello } from './hello/hello';
+import { Navbar } from './components/navbar/navbar';
+import { RouterOutlet } from '@angular/router';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-root',
-  imports: [Hello],
+  imports: [
+    Navbar, 
+    RouterOutlet,
+    LucideAngularModule,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css',
   standalone: true,

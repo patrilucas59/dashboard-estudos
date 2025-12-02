@@ -1,0 +1,7 @@
+@reference '../../../styles.css';
+
+@layer components {
+  .active {
+    @apply text-blue-600 font-semibold;
+  }
+}

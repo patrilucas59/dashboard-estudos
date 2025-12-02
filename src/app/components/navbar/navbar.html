@@ -1,1 +1,45 @@
-<p>navbar works!</p>
+<nav class="h-screen w-64 bg-white border-r px-6 py-8 flex flex-col justify-between">
+    <ul class="space-y-4">
+        <li>
+            <a href="/" routerLinkActive="active"
+            class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
+            <lucide-icon name="home"></lucide-icon>
+            <span class="text-xl font-medium">Home</span>
+        </a>
+        </li>
+
+        <li>
+            <a href="/metas" routerLinkActive="active"
+            class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
+            <lucide-icon name="goal"></lucide-icon>
+            <span class="text-xl font-medium">Metas do Aluno</span>
+        </a>
+        </li>
+
+        <li>
+            <a routerLink="/estudos" routerLinkActive="active" 
+            class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
+            <lucide-icon name="book-open"></lucide-icon>
+            <span class="text-xl font-medium">Estudos</span>
+        </a>
+        </li>
+
+        <li>
+            <a href="/relatorios" routerLinkActive="active"
+            class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
+            <lucide-icon name="bar-chart-3"></lucide-icon>
+            <span class="text-xl font-medium">Relatórios</span>
+        </a>
+        </li>
+    </ul>
+
+    <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 cursor-pointer transition">
+        <div class="h-10 w-10 rounded-full bg-gray-500 flex items-center justify-center font-bold">
+            U
+        </div>
+        <div>
+            <p class="text-sm font-medium text-gray-800">Usuário</p>
+            <p class="text-xs text-gray-500">user@gmail.com</p>
+        </div>
+    </div>
+</nav>
