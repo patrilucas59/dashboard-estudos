@@ -8,7 +8,7 @@ import { LucideAngularModule } from 'lucide-angular';
   imports: [
     RouterLink,
     RouterLinkActive,
-    LucideAngularModule,
+    LucideAngularModule
   ],
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.scss'],

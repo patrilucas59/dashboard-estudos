@@ -5,14 +5,14 @@ import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     Navbar, 
     RouterOutlet,
-    LucideAngularModule,
+    LucideAngularModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
-  standalone: true,
 })
 export class App {
   protected readonly title = signal('dashboard-estudos');

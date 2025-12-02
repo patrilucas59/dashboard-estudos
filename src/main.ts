@@ -2,19 +2,19 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { App } from './app/app';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
-import { LucideAngularModule, Home, Goal, BookOpen, BarChart3 } from 'lucide-angular';
+import { Goal, BookOpen, File, House, LucideAngularModule } from 'lucide-angular';
+import { importProvidersFrom } from '@angular/core';
 
 bootstrapApplication(App, {
-  providers: [
+   providers: [
     provideRouter(routes),
-    {
-      provide: LucideAngularModule,
-      useValue: LucideAngularModule.pick({
-        Home,
+    importProvidersFrom(
+      LucideAngularModule.pick({
+        House,
         Goal,
         BookOpen,
-        BarChart3
+        File
       })
-    }
+    )
   ]
 });
