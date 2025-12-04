@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { StatsCard } from '../../components/stats-card/stats-card';
-import { LucideAngularComponent, LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule } from 'lucide-angular';
+import { CourseCard } from '../../components/course-card/course-card';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [StatsCard, LucideAngularModule],
+  imports: [StatsCard, CourseCard, LucideAngularModule],
   templateUrl: './home.html',
 })
 

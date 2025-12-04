@@ -1,1 +1,34 @@
-<p>course-card works!</p>
+<div class="bg-white p-4 rounded-xl shadow flex flex-col gap-2 border hover:shadow-md transition cursor relative">
+
+    <div class="flex justify-between items-start">
+        <div>
+            <h3 class="font-semibold text-lg">{{ title }}</h3>
+            <p class="text-gray-500 text-sm">{{ subtitle }}</p>
+        </div>
+
+        <lucide-icon name="ellipsis-vertical" class="text-gray-500"></lucide-icon>
+    </div>
+
+    <div class="flex items-center gap-1">
+        <lucide-icon name="clock"></lucide-icon>
+        <span>{{ title }}</span>
+    </div>
+
+    <span class="text-gray-400"></span>
+
+    <span>{{ updated }}</span>
+
+    <span class="text-gray-400">*</span>
+
+        <span 
+        class="px-2 py-1 rounded-full text-xs font-medium"
+        [ngClass]="{
+            'bg-green-100 text-green-600': status === 'Concluído',
+            'bg-blue-100 text-blue-600': status === 'Em andamento',
+            'bg-yellow-100 text-yellow-600': status === 'Pendente'
+        }"
+        >
+        {{ status }}
+        </span>
+
+</div>
