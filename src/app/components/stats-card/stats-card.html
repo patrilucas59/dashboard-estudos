@@ -1,1 +1,12 @@
-<p>stats-card works!</p>
+<div class="stats-card" [style.border-color]="color">
+    <div class="icon" [style.background]="color">
+        <i class="icon"></i>
+    </div>
+
+    <div class="content">
+        <h3>{{ title }}</h3>
+        <p class="value">{{ value }}</p>
+
+        <small *ngIf="description">{{ description }}</small>
+    </div>
+</div>

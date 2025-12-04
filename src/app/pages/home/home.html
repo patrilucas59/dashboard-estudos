@@ -1,1 +1,47 @@
-<p>vasco!</p>
+<div class="p-6 w-full max-w-7xl mx-auto space-y-10">
+
+    <h1 class="text-2xl font-bold">Home</h1>
+
+    <!-- KIPs -->
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <app-stats-card
+            title="Horas estudadas"
+            value="12h"
+            icon="bi bi-clock"
+            color="#4F46E5"
+            description="+4h vs mês passado"
+        />
+        
+        <app-stats-card
+            title="Matérias concluídas"
+            value="3"
+            icon="bi bi-journal-bookmark"
+            color="#16A34A" 
+        />
+
+        <app-stats-card
+            title="Progresso semanal"
+            value="64%"
+            icon="calendar"
+            color="#DC2626"    
+        />
+     </div>
+
+     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+     <div class="col-span-2 bg-white rounded-xl shadow p-6">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+            Estudos Recentes
+        </h2>
+
+     </div>
+
+     <div class="bg-white rounded-xl shadow p-6">
+        <h2 class="text-xl font-semibold mb-4"> Progresso por Matéria</h2>
+
+        <div class="mb-4">
+            <p class="font-medium">Matemática <span class="float-right">75%</span></p>
+        </div>
+     </div>
+     </div>
+</div>
