@@ -1,5 +1,5 @@
-import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
@@ -7,13 +7,11 @@ import { LucideAngularModule } from 'lucide-angular';
   standalone: true,
   imports: [LucideAngularModule, NgClass],
   templateUrl: './course-card.html',
-  providers: [],
 })
 export class CourseCard {
-  @Input() title: string = '';
-  @Input() subtitle: string = '';
+  @Input() title!: string;
+  @Input() subtitle!: string;
   @Input() time: string = '';
   @Input() updated: string = '';
-  @Input() status: string = '';
-  @Input() color?: string = '#4B7BFF';
+  @Input() status!: string;
 }

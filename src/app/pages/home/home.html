@@ -3,43 +3,81 @@
     <h1 class="text-2xl font-bold">Home</h1>
 
     <!-- KIPs -->
-     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <app-stats-card
-            title="Horas estudadas"
-            value="12h"
-            icon="bi bi-clock"
-            color="#4F46E5"
-            description="+4h vs mês passado"
-        />
-        
-        <app-stats-card
-            title="Matérias concluídas"
-            value="3"
-            icon="bi bi-journal-bookmark"
-            color="#16A34A" 
-        />
+     <div class="flex flex-grap gap-4">
+            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md">
+                <app-stats-card
+                    title="Horas Estudadas"
+                    value="12h"
+                    icon="bi bi-clock"
+                    color="#4F46E5"
+                    description="Esta semana"
+                ></app-stats-card>
+            </div>
 
-        <app-stats-card
-            title="Progresso semanal"
-            value="64%"
-            icon="calendar"
-            color="#DC2626"    
-        />
-     </div>
+            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md">
+                <app-stats-card
+                    title="Matérias Concluídas"
+                    value="3"
+                    icon="bi bi-journal-bookmark"
+                    color="#16A34A"
+                    description="Este mês"
+                ></app-stats-card>
+            </div>
+
+            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md">
+                <app-stats-card
+                    title="Progresso Semanal"
+                    value="64%"
+                    icon="calendar"
+                    color="#DC2626"
+                    description="Meta"
+                ></app-stats-card>
+            </div>
+
+            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md">
+                <app-stats-card
+                    title="Sequência"
+                    value="7 dias"
+                    icon="calendar"
+                    color="#DC2626"
+                    description="Melhor"
+                ></app-stats-card>
+            </div>
+        </div>
 
      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-     <div class="col-span-2 bg-white rounded-xl shadow p-6">
+     <div class="col-span-2 bg-white rounded-xl shadow p-5 overflow-hidden">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-2">Estudos Recentes</h2>
 
-        <app-course-card
-            title="Matemática"
-            subtitle="Cálculo Diferencial"
-            time="2h 45m"
-            updated="Hoje"
-            status="Concluído"
-        />
+        <div class="p-1">
+            <div class="flex flex-col gap-4">
+            <ng-container *ngFor="let s of recentStudies">
+            <app-course-card
+                [title]="s.title"
+                [subtitle]="s.subtitle"
+                [time]="s.time"
+                [updated]="s.updated"
+                [status]="s.status">
+            </app-course-card>
 
+            </ng-container>
+            </div>
+        </div>
+    </div>
+
+     <div class="bg-white rounded-xl shadow p-4">
+        <h2 class="text-xl font-bold mb-4">Próximas Atividades</h2>
+
+        <div class="space-y-4 overflow-hidden">
+            <ng-container *ngFor="let s of nextActivities">
+                <div class="p-4 rounded-lg">
+                    <p class="font-semibold">{{ s.title }}</p>
+                    <p class="text-sm text-gray-600">{{ s.subtitle }}</p>
+                    <p class="text-sm text-gray-500">Entrega: {{ s.dueDate | date: 'dd/MM/yyyy' }}</p>
+                </div>
+            </ng-container>
+        </div>
      </div>
 
      <div class="bg-white rounded-xl shadow p-6">
@@ -47,6 +85,7 @@
 
         <div class="mb-4">
             <p class="font-medium">Matemática <span class="float-right">75%</span></p>
+            <app-progress-bar [progress]="75"></app-progress-bar>
         </div>
      </div>
      </div>
