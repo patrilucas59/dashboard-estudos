@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { Navbar } from './components/navbar/navbar';
 import { RouterOutlet } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
+import { Header } from './shared/header/header';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { LucideAngularModule } from 'lucide-angular';
   imports: [
     Navbar, 
     RouterOutlet,
-    LucideAngularModule
+    LucideAngularModule,
+    Header
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

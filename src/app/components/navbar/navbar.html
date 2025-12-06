@@ -1,5 +1,12 @@
-<nav class="h-screen w-64 bg-white border-r px-6 py-8 flex flex-col justify-between">
-    <ul class="space-y-4">
+<nav class="h-screen w-64 bg-white px-6 py-10 flex flex-col shadow border-r-0 justify-between">
+
+    <div>
+    <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-blue-500 rounded-md"></div>
+        <span class="text-2xl font-bold text-gray-800">Laugh Tale</span>
+    </div>
+
+    <ul class="space-y-5 mt-10">
         <li>
             <a href="/" routerLinkActive="active"
             class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
@@ -32,8 +39,9 @@
         </a>
         </li>
     </ul>
+    </div>
 
-    <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 cursor-pointer transition">
+    <div class="flex items-end gap-3 p-3 rounded-lg hover:bg-gray-100 cursor-pointer transition">
         <div class="h-10 w-10 rounded-full bg-gray-500 flex items-center justify-center font-bold">
             U
         </div>
@@ -42,4 +50,5 @@
             <p class="text-xs text-gray-500">user@gmail.com</p>
         </div>
     </div>
+
 </nav>

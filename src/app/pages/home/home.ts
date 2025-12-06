@@ -3,7 +3,7 @@ import { StatsCard } from '../../components/stats-card/stats-card';
 import { LucideAngularModule } from 'lucide-angular';
 import { CourseCard } from '../../components/course-card/course-card';
 import { ProgressBar } from '../../components/progress-bar/progress-bar';
-import { DatePipe, NgFor } from '@angular/common';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,6 @@ import { DatePipe, NgFor } from '@angular/common';
     LucideAngularModule,
     ProgressBar,
     NgFor,
-    DatePipe
   ],
   templateUrl: './home.html',
 })
@@ -30,6 +29,13 @@ export class Home {
 
   recentStudies = [
     {
+      title: 'Língua Portuguesa',
+      subtitle: 'Machado de Assis',
+      time: '3h',
+      updated: 'Há 2 dias atrás',
+      status: 'Concluído'
+    },
+    {
       title: 'Matemática',
       subtitle: 'Logaritmos',
       time: '2h 45m',
@@ -42,14 +48,6 @@ export class Home {
       time: '1h 20m',
       updated: 'Ontem',
       status: 'Pendente',
-    }
-  ];
-
-  nextActivities = [
-    {
-      title: 'Física',
-      subtitle: 'Primeira Lei de Newton',
-      dueDate: new Date(),
     }
   ];
 }

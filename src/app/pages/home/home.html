@@ -1,10 +1,8 @@
 <div class="p-6 w-full max-w-7xl mx-auto space-y-10">
 
-    <h1 class="text-2xl font-bold">Home</h1>
-
-    <!-- KIPs -->
+    <!-- KIPs (indicadores chave de desempenho) -->
      <div class="flex flex-grap gap-4">
-            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md">
+            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
                 <app-stats-card
                     title="Horas Estudadas"
                     value="12h"
@@ -14,7 +12,7 @@
                 ></app-stats-card>
             </div>
 
-            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md">
+            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
                 <app-stats-card
                     title="Matérias Concluídas"
                     value="3"
@@ -24,7 +22,7 @@
                 ></app-stats-card>
             </div>
 
-            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md">
+            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
                 <app-stats-card
                     title="Progresso Semanal"
                     value="64%"
@@ -34,7 +32,7 @@
                 ></app-stats-card>
             </div>
 
-            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md">
+            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
                 <app-stats-card
                     title="Sequência"
                     value="7 dias"
@@ -65,27 +63,22 @@
             </div>
         </div>
     </div>
+     <div class="bg-white rounded-xl shadow p-6 h-100 overflow-auto">
+        <h2 class="text-xl font-semibold mb-8"> Progresso por Matéria</h2>
 
-     <div class="bg-white rounded-xl shadow p-4">
-        <h2 class="text-xl font-bold mb-4">Próximas Atividades</h2>
-
-        <div class="space-y-4 overflow-hidden">
-            <ng-container *ngFor="let s of nextActivities">
-                <div class="p-4 rounded-lg">
-                    <p class="font-semibold">{{ s.title }}</p>
-                    <p class="text-sm text-gray-600">{{ s.subtitle }}</p>
-                    <p class="text-sm text-gray-500">Entrega: {{ s.dueDate | date: 'dd/MM/yyyy' }}</p>
-                </div>
-            </ng-container>
+        <div class="mb-8">
+            <p class="font-medium">Língua Portuguesa<span class="float-right">100%</span></p>
+            <app-progress-bar [progress]="100"></app-progress-bar>
         </div>
-     </div>
 
-     <div class="bg-white rounded-xl shadow p-6">
-        <h2 class="text-xl font-semibold mb-4"> Progresso por Matéria</h2>
-
-        <div class="mb-4">
-            <p class="font-medium">Matemática <span class="float-right">75%</span></p>
+        <div class="mb-8">
+            <p class="font-medium">Matemática<span class="float-right">75%</span></p>
             <app-progress-bar [progress]="75"></app-progress-bar>
+        </div>
+
+        <div class="mb-8">
+            <p class="font-medium">História<span class="float-right">50%</span></p>
+            <app-progress-bar [progress]="50"></app-progress-bar>
         </div>
      </div>
      </div>

@@ -5,8 +5,8 @@ import { Estudos } from './pages/estudos/estudos';
 import { Relatorios } from './pages/relatorios/relatorios';
 
 export const routes: Routes = [
-    { path: '', component: Home },
-    { path: 'metas', component: Metas },
-    { path: 'estudos', component: Estudos },
-    { path: 'relatorios', component: Relatorios },
+    { path: '', component: Home, data: { title: 'Home' } },
+    { path: 'metas', component: Metas, data: { title: 'Metas' } },
+    { path: 'estudos', component: Estudos, data: { title: 'Estudos' } },
+    { path: 'relatorios', component: Relatorios, data: { title: 'Relatorios' } },
 ];
