@@ -1,46 +1,22 @@
 <div class="p-6 w-full max-w-7xl mx-auto space-y-10">
 
     <!-- KIPs (indicadores chave de desempenho) -->
-     <div class="flex flex-grap gap-4">
-            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
-                <app-stats-card
-                    title="Horas Estudadas"
-                    value="12h"
-                    icon="bi bi-clock"
-                    color="#4F46E5"
-                    description="Esta semana"
-                ></app-stats-card>
-            </div>
+        <div class="flex flex-wrap gap-3">
 
-            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
-                <app-stats-card
-                    title="Matérias Concluídas"
-                    value="3"
-                    icon="bi bi-journal-bookmark"
-                    color="#16A34A"
-                    description="Este mês"
-                ></app-stats-card>
-            </div>
+            <ng-container *ngFor="let s of kpis">
 
-            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
-                <app-stats-card
-                    title="Progresso Semanal"
-                    value="64%"
-                    icon="calendar"
-                    color="#DC2626"
-                    description="Meta"
-                ></app-stats-card>
-            </div>
+                <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
+                    <app-stats-card
+                        [title]="s.title"
+                        [value]="s.value"
+                        [icon]="s.icon"
+                        [color]="s.color"
+                        [description]="s.description">
+                    </app-stats-card>
+                </div>
 
-            <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
-                <app-stats-card
-                    title="Sequência"
-                    value="7 dias"
-                    icon="calendar"
-                    color="#DC2626"
-                    description="Melhor"
-                ></app-stats-card>
-            </div>
+            </ng-container>
+
         </div>
 
      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">

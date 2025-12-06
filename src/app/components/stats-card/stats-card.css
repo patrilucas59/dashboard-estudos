@@ -1,0 +1,15 @@
+.stats-card {
+    transition: all 0.2s ease-in-out;
+}
+
+.stats-card:hover {
+    transform: translateY(-2px);
+}
+
+.icon {
+    transition: 0.2s eases;
+}
+
+icon:hover {
+    filter: brightness(1.1);
+}

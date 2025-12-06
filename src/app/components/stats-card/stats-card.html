@@ -1,12 +1,12 @@
-<div class="stats-card" [style.border-color]="color">
-    <div class="icon" [style.background]="color">
-        <i class="icon"></i>
+<div class="stats-card border-l p-4 flex items-center gap-3" [style.border-color]="color">
+    <div class="icon flex items-center justify-center rounded-md shadow w-11 h-11" [style.background]="color">
+        <lucide-icon [name]="icon" class="w-6 h-6 text-white"></lucide-icon>
     </div>
 
     <div class="content">
-        <h3>{{ title }}</h3>
-        <p class="value">{{ value }}</p>
+        <h3 class="text-sm font-medium text-gray-600">{{ title }}</h3>
+        <p class="value text-2xl font-bold">{{ value }}</p>
 
-        <small *ngIf="description">{{ description }}</small>
+        <small *ngIf="description" class="text-gray-500 text-xs">{{ description }}</small>
     </div>
 </div>

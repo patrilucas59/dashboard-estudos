@@ -1,18 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-stats-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LucideAngularModule],
   templateUrl: './stats-card.html',
   styleUrl: './stats-card.css',
 })
 export class StatsCard {
 
-  @Input() title: string = ''; // Nome da métrica (horas estudadas)
-  @Input() value: string | number = ''; // Valor atual (12h)
-  @Input() icon: string = ''; // Ícone (lucide)
-  @Input() color: string = '#4B7BFF'; // Cor do card
-  @Input() description?: string; // Descrição opicional
+  @Input() title: string = '';
+  @Input() value: string | number = '';
+  @Input() icon: string = '';
+  @Input() color: string = '#4B7BFF'; 
+  @Input() description?: string;
 }
