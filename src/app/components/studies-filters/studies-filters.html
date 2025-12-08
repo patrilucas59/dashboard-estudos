@@ -13,12 +13,12 @@
         </div>
 
         <div class="flex gap-2">
-            <button class="flex items-center gap-2 px-4 py-2.5 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors text-sm text-slate-700">
+            <button class="flex items-center gap-2 px-4 py-2.5 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors text-sm text-slate-700 cursor-pointer">
                 <lucide-icon name="filter" class="w-4 h-4"></lucide-icon>
                 <span>Filtros</span>
             </button>
 
-            <button class="flex items-center gap-2 px-4 py-2.5 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors text-sm text-slate-700">
+            <button class="flex items-center gap-2 px-4 py-2.5 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors text-sm text-slate-700 cursor-pointer">
                 <lucide-icon name="calendar" class="w-4 h-4"></lucide-icon>
                 <span>Período</span>
             </button>
@@ -26,17 +26,9 @@
     </div>
 
     <div class="flex gap-5 mt-4 flex-wrap">
-        <button class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-md text-xs hover:bg-blue-100 transition-colors">
-            Todos
-        </button>
-        <button class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-md text-xs hover:bg-blue-100 transition-colors">
-            Concluídos
-        </button>
-        <button class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-md text-xs hover:bg-blue-100 transition-colors">
-            Em andamento
-        </button>
-        <button class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-md text-xs hover:bg-blue-100 transition-colors">
-            Planejados
-        </button>
+        <button class="btn-filter">Todos</button>
+        <button class="btn-filter">Concluídos</button>
+        <button class="btn-filter">Em andamento</button>
+        <button class="btn-filter">Planejados</button>
     </div>
 </div>

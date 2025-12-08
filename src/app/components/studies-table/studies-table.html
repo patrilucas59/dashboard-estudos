@@ -1,0 +1,50 @@
+<div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+    <div class="overflow-x-auto">
+
+        <table class="w-full">
+        <thead class="bg-slate-50 border-b border-slate-200">
+            <tr>
+                <th class="table-head-cell">Matéria / Tópico</th>
+                <th class="table-head-cell">Data</th>
+                <th class="table-head-cell">Horário</th>
+                <th class="table-head-cell">Duração</th>
+                <th class="table-head-cell">Status</th>
+                <th class="w-12 px-6 py-4"></th>
+            </tr>
+        </thead>
+
+            <tbody>
+                <tr *ngFor="let s of studies" class="border-b-0 hover:bg-slate-50 transition">
+
+                    <td class="px-6 py-4">
+                        <h3 class="font-semibold">{{ s.subject }}</h3>
+                        <p class="text-sm text-gray-600">{{ s.topic }}</p>
+                    </td>
+
+                    <td class="px-6 py-4 text-sm">{{ s.date }}</td>
+                    
+                    <td class="px-6 py-4 text-sm">{{ s.startTime }}</td>
+
+                    <td class="px-6 py-4 text-sm">{{ s.duration }}</td>
+
+                    <td class="px-6 py-4">
+                        <span 
+                            [ngClass]="statusConfig[s.status].bg"
+                            class="px-3 py-1 rounded-full text-xs flex items-center gap-1 w-max"
+                            >
+                        <lucide-icon 
+                            [name]="statusConfig[s.status].icon"
+                            class="h-4 text-center">
+                        </lucide-icon>
+                        {{ statusConfig[s.status].label }}
+                        </span>
+                    </td>
+
+                    <td class="px-6 py-4 text-right">
+                        <lucide-icon name="ellipsis-vertical" class="text-gray-500 cursor-pointer"></lucide-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
