@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
@@ -6,6 +7,7 @@ import { LucideAngularModule } from 'lucide-angular';
   selector: 'app-navbar',
   standalone: true,
   imports: [
+    CommonModule,
     RouterLink,
     RouterLinkActive,
     LucideAngularModule

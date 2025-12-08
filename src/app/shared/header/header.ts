@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { filter, map, mergeMap } from 'rxjs';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LucideAngularModule],
   templateUrl: './header.html',
 })
 export class Header {

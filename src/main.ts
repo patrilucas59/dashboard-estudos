@@ -2,7 +2,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { App } from './app/app';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
-import { Goal, BookOpen, File, House, LucideAngularModule, EllipsisVertical, Clock, TrendingUp } from 'lucide-angular';
+import { Goal, BookOpen, File, House, LucideAngularModule, EllipsisVertical, Clock, TrendingUp, Settings, CircleUser,  } from 'lucide-angular';
 import { importProvidersFrom } from '@angular/core';
 
 bootstrapApplication(App, {
@@ -16,7 +16,9 @@ bootstrapApplication(App, {
         File,
         EllipsisVertical,
         Clock,
-        TrendingUp
+        TrendingUp,
+        Settings,
+        CircleUser,
       })
     )
   ]
