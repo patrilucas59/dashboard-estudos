@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { StatsCard } from '../../components/stats-card/stats-card';
 import { LucideAngularModule } from 'lucide-angular';
 import { NgClass, NgFor } from '@angular/common';
+import { StudiesFilters } from '../../components/studies-filters/studies-filters';
 
 @Component({
   selector: 'app-estudos',
   standalone: true,
-  imports: [StatsCard, LucideAngularModule, NgFor],
+  imports: [StudiesFilters, StatsCard, LucideAngularModule, NgFor],
   templateUrl: './estudos.html',
   styleUrl: './estudos.css',
 })
