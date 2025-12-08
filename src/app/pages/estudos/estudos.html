@@ -1,8 +1,39 @@
-<div class="flex justify-between items-center p-8">
+<div class="p-8">
+<div class="flex justify-between items-center">
+
     <div>
-        <h1 class="text-slate-600 text-sm">Gerencie suas sessões de estudos</h1>
+        <h1 class="text-slate-600 text-md">Gerencie suas sessões de estudos</h1>
     </div>
-<button class="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-sm cursor-pointer">
+
+    <button class="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-sm cursor-pointer">
    <span>+ Nova Sessão</span>
 </button>
+
+
+</div>
+
+<div class="p-6 rounded-xl flex justify-evenly gap-4">
+
+    <ng-container *ngFor="let s of studiesKips">
+        <app-stats-card
+        [title]="s.title"
+        [value]="s.value"
+        [icon]="s.icon"
+        [color]="s.color">
+        </app-stats-card>
+    </ng-container>
+
+</div>
+
+<div class="flex flex-row justify-center gap-3 mb-5">
+
+    <h2>( TABELA ) Busca por matéria ou tópico...</h2>
+    <button class="bg-amber-300 rounded-md w-15">Filtros</button>
+    <button class="bg-amber-600 rounded-md w-18">Período</button>
+
+</div>
+
+<div class="flex flex-row justify-center gap-3">
+    <h3>Matéria/Tópico - Data - Horário - Duração - Status</h3>
+</div>
 </div>

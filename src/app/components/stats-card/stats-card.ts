@@ -14,6 +14,6 @@ export class StatsCard {
   @Input() title: string = '';
   @Input() value: string | number = '';
   @Input() icon: string = '';
-  @Input() color: string = '#4B7BFF'; 
+  @Input() color: string = ''; 
   @Input() description?: string;
 }

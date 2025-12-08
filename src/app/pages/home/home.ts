@@ -23,7 +23,7 @@ export class Home {
   kpis= [
     { title: 'Horas Estudadas', value: '12h', icon: 'clock', color: '#4F46E5', description: 'Esta semana:' },
     { title: 'Matérias Concluídas', value: 3, icon: 'book-open', color: '#16A34A', description: 'Este mês:' },
-    { title: 'Progresso semanal', value: '64%', icon: 'trending-up', color: '#CDEE12', description: 'Meta:' },
+    { title: 'Progresso Semanal', value: '64%', icon: 'trending-up', color: '#CDEE12', description: 'Meta:' },
     { title: 'Frequência', value: '4 dias', icon: 'goal', color: '#DC2626', description: 'Melhor:'  },
   ];
 
