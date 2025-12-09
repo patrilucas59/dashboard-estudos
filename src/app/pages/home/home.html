@@ -1,11 +1,11 @@
-<div class="p-6 w-full max-w-7xl mx-auto space-y-10">
+<div class="px-6 lg:px-10 py-6 w-full max-w-7xl mx-auto space-y-10">
 
     <!-- KIPs (indicadores chave de desempenho) -->
         <div class="flex flex-wrap gap-3">
 
             <ng-container *ngFor="let s of kpis">
 
-                <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-4 rounded-md bg-white">
+                <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-3 rounded-md bg-white">
                     <app-stats-card
                         [title]="s.title"
                         [value]="s.value"
@@ -21,24 +21,24 @@
 
      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-     <div class="col-span-2 bg-white rounded-xl shadow p-5 overflow-hidden">
-        <h2 class="text-xl font-bold mb-4 flex items-center gap-2">Estudos Recentes</h2>
+        <div class="lg:col-span-2 bg-white rounded-xl shadow p-5 overflow-hidden">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2">Estudos Recentes</h2>
 
-        <div class="p-1">
-            <div class="flex flex-col gap-4">
-            <ng-container *ngFor="let s of recentStudies">
-            <app-course-card
-                [title]="s.title"
-                [subtitle]="s.subtitle"
-                [time]="s.time"
-                [updated]="s.updated"
-                [status]="s.status">
-            </app-course-card>
+            <div class="p-1">
+                <div class="flex flex-col gap-4">
+                    <ng-container *ngFor="let s of recentStudies">
+                        <app-course-card
+                            [title]="s.title"
+                            [subtitle]="s.subtitle"
+                            [time]="s.time"
+                            [updated]="s.updated"
+                            [status]="s.status">
+                        </app-course-card>
 
-            </ng-container>
+                    </ng-container>
+                </div>
             </div>
         </div>
-    </div>
      <div class="bg-white rounded-xl shadow p-6 h-100 overflow-auto">
         <h2 class="text-xl font-semibold mb-8">Progresso por Matéria</h2>
 

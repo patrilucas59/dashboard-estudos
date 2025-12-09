@@ -1,9 +1,10 @@
+<ng-container *ngIf="variant === 'studies'">
 <div class="bg-white rounded-lg border border-slate-200 p-4 shadow-sm">
-    <div class="flex flex-col sm:flex-row gap-4">
+    <div class="flex flex-col sm:flex-row gap-5">
 
         <div class="flex-1 relative">
-            <lucide-icon name="search" 
-            class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2">
+        <lucide-icon name="search" 
+            class="w-4 h-4 text-slate-400 absolute left-2 top-1/2 -translate-y-1/2">
         </lucide-icon>
 
         <input type="text" 
@@ -32,3 +33,46 @@
         <button class="btn-filter">Planejados</button>
     </div>
 </div>
+</ng-container>
+
+<ng-container *ngIf="variant === 'goals'">
+
+  <div class="bg-white rounded-lg border border-slate-200 p-4 shadow-sm">
+    <div class="flex flex-col md:flex-row gap-4">
+
+      <div class="flex-1 relative">
+        <lucide-icon name="search" 
+            class="w-4 h-4 text-slate-400 absolute left-2 top-1/2 -translate-y-1/2">
+        </lucide-icon>
+
+        <input
+          type="text"
+          placeholder="Buscar metas..."
+          class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg 
+                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div class="flex gap-2">
+        <button
+          *ngFor="let f of filters"
+          (click)="activeFilter = f.id"
+          class="px-4 py-2 rounded-lg transition-colors border"
+          [ngClass]="activeFilter === f.id
+            ? 'bg-blue-50 text-blue-600 border-blue-200'
+            : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
+          "
+        >
+          {{ f.label }}
+        </button>
+      </div>
+
+      <button class="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition-colors">
+        <lucide-icon name="filter" class="w-4 h-4"></lucide-icon>
+        <span class="hidden md:inline">Filtros</span>
+      </button>
+
+    </div>
+  </div>
+
+</ng-container>

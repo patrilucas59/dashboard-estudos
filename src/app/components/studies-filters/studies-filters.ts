@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
@@ -9,4 +9,15 @@ import { LucideAngularModule } from 'lucide-angular';
   templateUrl: './studies-filters.html',
   styleUrl: './studies-filters.css',
 })
-export class StudiesFilters {}
+export class StudiesFilters {
+  @Input() variant: 'studies' | 'goals' = 'studies';
+
+  activeFilter = 'todas';
+
+  filters = [
+    { id: 'todas', label: 'Todas' },
+    { id: 'ativas', label: 'Ativas' },
+    { id: 'concluidas', label: 'Concluídas' },
+    { id: 'atrasadas', label: 'Atrasadas' },
+  ]
+}

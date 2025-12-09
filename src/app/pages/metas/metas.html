@@ -1,3 +1,50 @@
-<div class="flex p-8">
-<p>Página em Desenvolvimento!</p>
+<div class="px-6 lg:px-10 py-6 w-full max-w-7xl mx-auto space-y-10">
+    <div class="flex justify-between items-center">
+
+        <div>
+            <h1 class="text-slate-600">Defina e acompanhe suas metas de estudos</h1>
+        </div>
+
+        <button class="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-sm cursor-pointer">
+        <span>
+            + Nova Meta
+        </span>        
+    </button>
+
+    </div>
+
+    <div class="rounded-xl flex justify-evenly gap-4">
+        <ng-container *ngFor="let s of historicGoals">
+            <app-stats-card
+                [title]="s.title"
+                [value]="s.value"
+                [icon]="s.icon"
+                [color]="s.color">
+            </app-stats-card>
+        </ng-container>
+    </div>
+
+    <div class="flex flex-col justify-center gap-3 mb-7">
+
+        <app-studies-filters variant="goals"></app-studies-filters>
+
+    </div>
+
+    <div class="flex flex-col justify-between">
+        <ng-container *ngFor="let goal of goals">
+            <app-course-card
+            variant="goal"
+            [title]="goal.title"
+            [subtitle]="goal.subtitle"
+            [progress]="goal.progress"
+            [iconGoal]="goal.iconGoal"
+            [currentHours]="goal.currentHours"
+            [totalHours]="goal.totalHours"
+            [successRate]="goal.successRate"
+            [subject]="goal.subject"
+            [priority]="goal.priority">
+            </app-course-card>
+        </ng-container>
+    </div>
+
 </div>
