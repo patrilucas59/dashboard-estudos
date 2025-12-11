@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 import { StatsCard } from '../../components/stats-card/stats-card';
 import { StudyEvolutionChart } from '../../components/Reports/study-evolution-chart/study-evolution-chart';
+import { SubjectDistributionChart } from '../../components/Reports/subject-distribution-chart/subject-distribution-chart';
 
 @Component({
   selector: 'app-relatorios',
-  imports: [LucideAngularModule, StatsCard, NgFor, StudyEvolutionChart],
+  imports: [LucideAngularModule, StatsCard, NgFor, StudyEvolutionChart, SubjectDistributionChart],
   templateUrl: './relatorios.html',
   styleUrl: './relatorios.css',
 })
