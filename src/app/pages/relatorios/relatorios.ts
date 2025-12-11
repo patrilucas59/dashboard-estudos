@@ -4,10 +4,11 @@ import { LucideAngularModule } from 'lucide-angular';
 import { StatsCard } from '../../components/stats-card/stats-card';
 import { StudyEvolutionChart } from '../../components/Reports/study-evolution-chart/study-evolution-chart';
 import { SubjectDistributionChart } from '../../components/Reports/subject-distribution-chart/subject-distribution-chart';
+import { SubjectHoursChart } from '../../components/Reports/subject-hours-chart/subject-hours-chart';
 
 @Component({
   selector: 'app-relatorios',
-  imports: [LucideAngularModule, StatsCard, NgFor, StudyEvolutionChart, SubjectDistributionChart],
+  imports: [LucideAngularModule, StatsCard, NgFor, StudyEvolutionChart, SubjectDistributionChart, SubjectHoursChart],
   templateUrl: './relatorios.html',
   styleUrl: './relatorios.css',
 })

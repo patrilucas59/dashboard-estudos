@@ -1,0 +1,22 @@
+<div class="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+
+    <div class="flex items-center ga-3 mb-6">
+    <div class="bg-green-50 text-green-600 p-2 rounded-lg">
+        <lucide-icon name="chart-bar" class="w-5 h-5"></lucide-icon>
+    </div>
+    <div>
+        <h3 class="text-slate-900">Tempo por Matéria (Este Mês)</h3>
+        <p class="text-slate-600 text-sm">Total de horas dedicadas</p>
+    </div>
+</div>
+
+<div class="h-72">
+    <canvas 
+    baseChart
+    [data]="chartData"
+    [options]="chartOptions"
+    chartType="bar"
+></canvas>
+</div>
+
+</div>
