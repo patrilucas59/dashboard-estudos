@@ -2,10 +2,11 @@ import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 import { StatsCard } from '../../components/stats-card/stats-card';
+import { StudyEvolutionChart } from '../../components/Reports/study-evolution-chart/study-evolution-chart';
 
 @Component({
   selector: 'app-relatorios',
-  imports: [LucideAngularModule, StatsCard, NgFor],
+  imports: [LucideAngularModule, StatsCard, NgFor, StudyEvolutionChart],
   templateUrl: './relatorios.html',
   styleUrl: './relatorios.css',
 })
