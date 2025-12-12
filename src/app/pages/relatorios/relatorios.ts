@@ -1,14 +1,23 @@
-import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 import { StatsCard } from '../../components/stats-card/stats-card';
 import { StudyEvolutionChart } from '../../components/Reports/study-evolution-chart/study-evolution-chart';
 import { SubjectDistributionChart } from '../../components/Reports/subject-distribution-chart/subject-distribution-chart';
 import { SubjectHoursChart } from '../../components/Reports/subject-hours-chart/subject-hours-chart';
+import { WeeklyProductivityChart } from '../../components/Reports/weekly-productivity-chart/weekly-productivity-chart';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-relatorios',
-  imports: [LucideAngularModule, StatsCard, NgFor, StudyEvolutionChart, SubjectDistributionChart, SubjectHoursChart],
+  imports: [
+    LucideAngularModule, 
+    StatsCard, 
+    StudyEvolutionChart, 
+    SubjectDistributionChart, 
+    SubjectHoursChart,
+    WeeklyProductivityChart,
+    NgFor
+  ],
   templateUrl: './relatorios.html',
   styleUrl: './relatorios.css',
 })
