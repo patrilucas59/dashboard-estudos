@@ -4,7 +4,6 @@ import { LucideAngularModule } from 'lucide-angular';
 import { StatsCard } from '../../components/stats-card/stats-card';
 import { StudiesFilters } from '../../components/studies-filters/studies-filters';
 import { CourseCard } from '../../components/course-card/course-card';
-import { ProgressBar } from '../../components/progress-bar/progress-bar';
 
 @Component({
   selector: 'app-metas',

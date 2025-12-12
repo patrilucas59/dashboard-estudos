@@ -2,7 +2,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { App } from './app/app';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
-import { Goal, BookOpen, File, House, LucideAngularModule, EllipsisVertical, Clock, TrendingUp, Settings, CircleUser, Calendar, Medal, Search, Filter, CheckCircle2, PlayCircle, Circle, Target, Camera, Mail, Phone, Map, MapIcon, MapPin, FolderKanban, Download, Flame, ChartPie, ChartBar } from 'lucide-angular';
+import { Goal, BookOpen, File, House, LucideAngularModule, EllipsisVertical, Clock, TrendingUp, Settings, CircleUser, Calendar, Medal, Search, Filter, CheckCircle2, PlayCircle, Circle, Target, Camera, Mail, Phone, Map, MapIcon, MapPin, FolderKanban, Download, Flame, ChartPie, ChartBar, HandCoins, Rocket, ClipboardMinus } from 'lucide-angular';
 import { importProvidersFrom } from '@angular/core';
 
 bootstrapApplication(App, {
@@ -30,12 +30,9 @@ bootstrapApplication(App, {
         Camera,
         Mail,
         Phone,
-        MapPin,
-        FolderKanban,
-        Download,
-        Flame,
-        ChartPie,
-        ChartBar,
+        HandCoins,
+        Rocket,
+        ClipboardMinus
       })
     )
   ]

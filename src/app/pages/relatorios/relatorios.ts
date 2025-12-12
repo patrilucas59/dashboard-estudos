@@ -1,8 +1,9 @@
+import { LucideAngularModule } from 'lucide-angular';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-relatorios',
-  imports: [],
+  imports: [LucideAngularModule],
   templateUrl: './relatorios.html',
   styleUrl: './relatorios.css',
 })
