@@ -4,11 +4,18 @@ import { ReportsLevelCard } from '../../components/reports-level-card/reports-le
 import { Rank, RANKS } from '../../types/ranking';
 import { CommonModule } from '@angular/common';
 import { ReportProgressOverview } from '../../components/report-progress-overview/report-progress-overview';
+import { ReportTimeline } from '../../components/report-timeline/report-timeline';
 
 @Component({
   selector: 'app-relatorios',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, ReportsLevelCard, ReportProgressOverview],
+  imports: [
+    CommonModule, 
+    LucideAngularModule, 
+    ReportsLevelCard, 
+    ReportProgressOverview,
+    ReportTimeline
+  ],
   templateUrl: './relatorios.html',
   styleUrl: './relatorios.css',
 })
@@ -33,4 +40,25 @@ export class Relatorios {
 
   weeklyXP = 420;
   monthlyXP = 1380;
+
+  timeline = [
+    {
+      date: 'Seg',
+      title: 'Sessão de Estudos',
+      description: 'Estudo de ciências comportamentais',
+      xp: 120,
+    },
+    {
+      date: 'Ter',
+      title: 'Dashboard',
+      description: 'Matemática Financeira',
+      xp: 90,
+    },
+    {
+      date: 'Qua',
+      title: 'Relatórios',
+      description: 'Sistema de ranking',
+      xp: 150,
+    }
+  ]
 }

@@ -7,7 +7,7 @@
     </div>
     <p class="text-muted-foreground">Continue assim! Você está arrasando nos estudo</p>
 
-    <div class="space-y-6">
+    <div class="space-y-8">
         <app-reports-level-card
             [rank]="rank"
             [level]="level"
@@ -19,10 +19,13 @@
         </app-reports-level-card>
 
         <app-report-progress-overview
-            class="mt-6"
             [totalXP]="userXP"
             [weeklyXP]="weeklyXP"
             [monthlyXP]="monthlyXP">
         </app-report-progress-overview>
+
+        <app-report-timeline
+            [items]="timeline">
+        </app-report-timeline>
     </div>
 </div>

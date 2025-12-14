@@ -1,0 +1,37 @@
+<div class="rounded-xl border border-slate-200 p-6 bg-white space-y-6">
+
+    <div class="flex items-center gap-3">
+        <lucide-icon name="activity" class="w-5 h-5 text-blue-600"></lucide-icon>
+        <h3 class="text-slate-900 font-semibold">{{ title }}</h3>
+    </div>
+
+    <div class="relative pl-6 space-y-6">
+
+        <div class="absolute left-2 top-0 bottom-0 w-px bg-slate-200"></div>
+
+        <div *ngFor="let item of items" class="relative flex gap-4">
+
+            <div class="w-4 h-4 rounded-full bg-blue-500 mt-1 z-10"></div>
+
+            <div class="flex-1 space-y-1">
+                <div class="flex items-center justify-between">
+                    <h4 class="font-medium text-slate-800">
+                        {{ item.title }}
+                    </h4>
+                    <span class="text-sm text-slate-500">
+                        {{ item.date }}
+                    </span>
+                </div>
+
+                <p *ngIf="item.description" class="text-sm text-slate-600">
+                    {{ item.description }}
+                </p>
+
+                <span class="inline-block tex-xs font-semibold text-blue-600">
+                    +{{ item.xp }} XP
+                </span>
+            </div>
+        </div>
+
+    </div>
+</div>
