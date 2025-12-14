@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { ReportsLevelCard } from '../../components/reports-level-card/reports-level-card';
 import { Rank, RANKS } from '../../types/ranking';
 import { CommonModule } from '@angular/common';
+import { ReportProgressOverview } from '../../components/report-progress-overview/report-progress-overview';
 
 @Component({
   selector: 'app-relatorios',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule, ReportsLevelCard],
+  imports: [CommonModule, LucideAngularModule, ReportsLevelCard, ReportProgressOverview],
   templateUrl: './relatorios.html',
   styleUrl: './relatorios.css',
 })
@@ -29,4 +30,7 @@ export class Relatorios {
   get level() {
     return Math.floor(this.userXP / 500);
   }
+
+  weeklyXP = 420;
+  monthlyXP = 1380;
 }

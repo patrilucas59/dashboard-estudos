@@ -1,0 +1,32 @@
+<div class="rounded-xl bg-card p-6 space-y-4 bg-blue-400 mt-6">
+    <h3 class="text-lg font-semibold text-white">
+        Evolução do Progresso
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+            <p class="text-sm text-muted-foreground text-white">XP Total</p>
+            <p class="text-xl font-bold text-white">{{ totalXP }}</p>
+        </div>
+
+        <div>
+            <p class="text-sm text-muted-foreground text-white">XP Total</p>
+            <p class="text-xl font-bold text-white">{{ weeklyXP }}</p>
+        </div>
+
+        <div>
+            <p class="text-sm text-muted-foreground text-white">XP Total</p>
+            <p class="text-xl font-bold text-white">{{ monthlyXP }}</p>
+        </div>
+    </div>
+
+        <p class="text-sm" [ngClass]="{
+            'text-white': trend === 'up',
+            'text-yellow-500': trend === 'stable',
+            'text-blue-500': trend === 'down'
+            }">
+        {{ trend === 'up' ? 'Excelente ritmo de evolução' :
+           trend === 'stable' ? 'Evolução constante. Continue assim!' :
+           'Vamos retomar o ritmo' }}
+        </p>
+</div>
