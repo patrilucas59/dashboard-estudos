@@ -6,4 +6,15 @@
         </div>
     </div>
     <p class="text-muted-foreground">Continue assim! Você está arrasando nos estudo</p>
+ 
+    <app-reports-level-card
+        [rank]="rank"
+        [level]="level"
+        [currentXP]="userXP"
+        [nextLevelXP]="2500"
+        title="Progresso do Estudante"
+        icon="crown"
+        gradient="from-blue-500 to-purple-600">
+    </app-reports-level-card>
+
 </div>
