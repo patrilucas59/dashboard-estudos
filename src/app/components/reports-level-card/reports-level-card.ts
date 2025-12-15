@@ -14,22 +14,28 @@ import { Rank } from '../../types/ranking';
 export class ReportsLevelCard {
 
   @Input({ required: true }) rank!: Rank;
-
   @Input() level: number = 1;
-  @Input() currentXP: number = 0;
-  @Input() nextLevelXP: number = 100;
+  @Input() currentXP = 0;
 
-  @Input() title: string = 'Progresso do Estudante';
-  @Input() gradient: string = 'from-blue-500 to-purple-600';
+  @Input() title = 'Progresso do Estudante';
+  @Input() gradient = 'from-blue-500 to-purple-600';
   @Input() icon: string = 'crown';
-  @Input() showProgress: boolean = true;
-  @Input() progressColor: string = 'bg-blue-400';
+  @Input() showProgress = true;
+  @Input() progressColor: string = 'bg-blue-400'
 
-  get xpProgress() {
-    return (this.currentXP / this.nextLevelXP) * 100;
+  get nextLevelXP(): number {
+    return this.rank.max;
   }
 
-  get missingXP() {
-    return this.nextLevelXP - this.currentXP;
+  get xpProgress(): number {
+    return Math.min(
+      ((this.currentXP - this.rank.min) /
+        (this.rank.max - this.rank.min)) * 100,
+      100
+    );
+  }
+
+  get missingXP(): number {
+    return Math.max(this.rank.max - this.currentXP, 0);
   }
 }

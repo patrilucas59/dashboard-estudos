@@ -21,10 +21,34 @@ import { NgFor } from '@angular/common';
 export class Home {
 
   kpis= [
-    { title: 'Horas Estudadas', value: '12h', icon: 'clock', color: '#4F46E5', description: 'Esta semana:' },
-    { title: 'Matérias Concluídas', value: 3, icon: 'book-open', color: '#16A34A', description: 'Este mês:' },
-    { title: 'Progresso Semanal', value: '64%', icon: 'trending-up', color: '#CDEE12', description: 'Meta:' },
-    { title: 'Frequência', value: '4 dias', icon: 'goal', color: '#DC2626', description: 'Melhor:'  },
+    { 
+      title: 'Horas Estudadas', 
+      value: '12h', 
+      icon: 'clock', 
+      color: '#4F46E5', 
+      description: 'nesta semana', 
+    },
+    { 
+      title: 'Matérias Concluídas', 
+      value: 3, 
+      icon: 'book-open', 
+      color: '#16A34A', 
+      description: 'neste mês', 
+    },
+    { 
+      title: 'Progresso Semanal', 
+      value: '64%', 
+      icon: 'trending-up', 
+      color: '#CDEE12', 
+      description: 'da meta semanal', 
+    },
+    { 
+      title: 'Frequência', 
+      value: '4 dias', 
+      icon: 'goal', 
+      color: '#DC2626', 
+      description: 'sequência atual'  
+    },
   ];
 
   recentStudies = [
@@ -47,7 +71,7 @@ export class Home {
       subtitle: 'Segunda Guerra Mundial',
       time: '1h 20m',
       updated: 'Ontem',
-      status: 'Pendente',
+      status: 'Não inciado',
     }
   ];
 }

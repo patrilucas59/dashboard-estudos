@@ -1,18 +1,22 @@
 <div class="px-6 lg:px-10 py-6 w-full max-w-7xl mx-auto space-y-10">
-    <div class="flex items-center gap-4">
-        <h1 class="text-xl">Olá, Estudante!</h1>
-        <div class="rounded-md p-1">
-            <lucide-icon name="hand-coins" class="w-7 h-7"></lucide-icon>
+    <div class="flex items-center justify-between">
+            
+        <div>
+            <h1 class="text-slate-600 text-xl font-semibold">
+                Evolução do seu desempenho
+            </h1>
+            <p class="text-slate-500 text-sm">
+                Veja como seus estudos estão se transformando em progresso real
+            </p>
         </div>
+ 
     </div>
-    <p class="text-muted-foreground">Continue assim! Você está arrasando nos estudo</p>
 
     <div class="space-y-8">
         <app-reports-level-card
             [rank]="rank"
             [level]="level"
             [currentXP]="userXP"
-            [nextLevelXP]="2500"
             title="Progresso do Estudante"
             icon="crown"
             gradient="from-blue-500 to-purple-600">

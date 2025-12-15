@@ -24,6 +24,19 @@ export class Estudos {
     { title: 'Média Diária', value: '3.5h', icon: 'medal', color: '#4F4655' },
   ]
 
+  private statusPriority: Record<Study['status'], number> = {
+    'em-andamento': 1,
+    'planejado': 2,
+    'concluido': 3,
+  }
+
+  get orderedStudies(): Study[] {
+    return [...this.studies].sort(
+      (a, b) =>
+        this.statusPriority[a.status] - this.statusPriority[b.status]
+    )
+  }
+
 studies: Study[] = [
     {
       id: '1',
