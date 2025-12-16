@@ -1,59 +1,62 @@
-# DashboardEstudos
+# Foco + 🚀
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+**Foco +** é uma aplicação web desenvolvida em **Angular** com o objetivo de auxiliar na organização e desafios pessoais, produvidade e acompanhamento de estudos. O projeto foi criado como parte do meu desenvolvimento técnico em Front-end, com focas em **boas práticas, UX e arquitetura escalável**.
 
-## Development server
+---
 
-To start a local development server, run:
+## Objetivo do Projeto
+
+- Aprimorar habilidades em **Angular moderno (standalone components)**
+- Implementar **Reactive Forms** com validações
+- Trabalhar estados de UI (edição, loading, feedback)
+- Criação de uma base sólida para projetos front-end profissionais
+- Propor uma ideia de estudos engajadora para alunos estudar e se desafiar durante os estudos
+
+---
+
+## Funcionalidades
+
+- Gerenciamento de perfil do usuário
+- Edição controlada de dados (Editar / Salvar / Cancelar)
+- Campos bloqueados fora do modo de edição
+- Persistência de dados com **LocalStorage**
+- Feedback visual com **Toastr**
+- Interface responsiva
+- Micro interações focadas em UX
+
+---
+
+## Tecnologias Utilizadas
+
+- **Angular 21** - framework principal
+- **Typescript** - tipagem estática e segurança
+- **Standalone Components** - arquitetura moderna de componentes
+- **Reactive Forms** - gerenciamento e validação de formulários
+- **RxJS** - programação reative e fluxo de dados
+- **Tailwind CSS** - estilização do projeto e design responsivo
+- **ngx-toastr** - notificações visuais para feedback do usuário
+- **Lucide Icons** - biblioteca de ícones
+- **LocalStorage API** - armazenamento de dados no navegador
+
+---
+
+## Arquitetura
+
+- Componentes desacoplados e reutilizáveis
+- Services responsáveis apenas pela regra de negócio
+- Separação clara entre UI e lógica
+- Tipagem forte com interfaces TypeScript
+
+---
+
+## ▶️ Como rodar o projeto
+
+### Pré-requisitos
+- Node.js (versão recomendada LTS)
+- Angular CLI
+
+### Rodando localmente
 
 ```bash
+npm install
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
