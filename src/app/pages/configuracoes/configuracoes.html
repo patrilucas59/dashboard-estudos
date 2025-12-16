@@ -1,164 +1,150 @@
-<div class="px-6 lg:px-10 py-10 w-full max-w-7xl mx-auto space-y-10">
+<div class="px-6 lg:px-10 py-6 w-full max-w-7xl mx-auto space-y-10">
 
-    <div class="flex row items-center gap-2">
-        <div class="bg-slate-200 p-2 rounded-lg flex items-center justify-center">
-            <lucide-icon name="settings" class="bg-slate-200"></lucide-icon>
+    <div>
+      <h1 class="text-slate-600 text-xl font-semibold">
+        Conte mais sobre você
+      </h1>
+      <p class="text-slate-500 text-sm">
+        Forneça suas informações logo abaixo
+      </p>
+    </div>
+
+  <div class="bg-white rounded-lg shadow-md border border-slate-200">
+
+    <div class="flex items-center justify-between p-6 border-b border-slate-200">
+      <div class="flex items-center gap-3">
+        <div class="bg-blue-50 text-blue-600 p-2 rounded-lg flex items-center justify-center">
+          <lucide-icon name="circle-user" class="w-5 h-5"></lucide-icon>
         </div>
 
         <div>
-            <h1 class="text-slate-600 text-xl font-semibold">
-                Conte mais sobre você
-            </h1>
-            <p class="text-slate-500 text-sm">
-                Forneça suas informações logo abaixo
-            </p>
+          <h2 class="text-slate-900">Perfil do Usuário</h2>
+          <p class="text-slate-600 text-sm">Gerencie suas informações pessoais</p>
         </div>
-
-    </div>
-
-<div class="bg-white rounded-lg  shadow-md border border-slate-200">
-
-
-  <div class="flex items-center justify-between p-6 border-b border-slate-200">
-
-    <div class="flex items-center gap-3">
-      <div class="bg-blue-50 text-blue-600 p-2 rounded-lg flex items-center justify-center">
-        <lucide-icon name="circle-user" class="w-5 h-5"></lucide-icon>
       </div>
 
-      <div>
-        <h2 class="text-slate-900">Perfil do Usuário</h2>
-        <p class="text-slate-600 text-sm">Gerencie suas informações pessoais</p>
+      <div class="flex gap-2">
+        <button *ngIf="!isEditing" (click)="toggleEdit()"
+          class="bg-slate-200 hover:bg-slate-300 text-slate-700 p-2 rounded-lg cursor-pointer">
+          Editar
+        </button>
+
+        <button *ngIf="isEditing" (click)="saveProfile()"
+          class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg cursor-pointer">
+          Salvar
+        </button>
+
+        <button *ngIf="isEditing" (click)="toggleEdit()"
+          class="bg-gray-200 hover:bg-gray-300 text-slate-700 p-2 rounded-lg cursor-pointer">
+          Cancelar
+        </button>
       </div>
     </div>
 
+    <div class="p-6 space-y-6">
+
+      <div class="flex items-center gap-6">
+        <div class="relative">
+          <div class="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl">
+            JD
+          </div>
+          <button
+            class="absolute bottom-0 right-0 w-8 h-8 bg-blue-600 hover:bg-blue-700
+            text-white rounded-full flex items-center justify-center shadow-lg
+            transition-colors cursor-pointer">
+            <lucide-icon name="camera" class="w-4 h-4"></lucide-icon>
+          </button>
         </div>
 
-        <div class="p-6 space-y-6">
+        <div>
+          <h3 class="text-slate-900">John Doe</h3>
+          <p class="text-slate-600 text-sm">Aluno desde: 2022</p>
+        </div>
+      </div>
 
-            <div class="flex items-center gap-6">
-                <div class="relative">
-                    <div class="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl">
-                        JD
-                    </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                    <button 
-                    class="absolute bottom-0 right-0 w-8 h-8 bg-blue-600 hover:bg-blue-700
-                        text-white rounded-full flex items-center justify-center shadow-lg
-                        transitions-colors cursor-pointer">
-                    <lucide-icon name="camera" class="w-4 h-4"></lucide-icon>
-                    </button>
-                </div>
+        <div>
+          <label for="fullName" class="block text-sm text-slate-700 mb-2">Nome Completo</label>
+          <div class="relative">
+            <lucide-icon name="circle-user"
+              class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></lucide-icon>
 
-                <div>
-                    <h3 class="text-slate-900">John Doe</h3>
-                    <p class="text-slate-600 text-sm">Aluno desde:</p>
-                </div>
-            </div>
+            <input [formControl]="fullName" type="text" placeholder="Nome Completo"
+              class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+              bg-slate-50 text-slate-600"/>
+          </div>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm text-slate-700 mb-2">Email</label>
+          <div class="relative">
+            <lucide-icon name="mail"
+              class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></lucide-icon>
 
-                <div>
-                    <label for="fullName" class="block text-sm text-slate-700 mb-2">Nome Completo</label>
-                    <div class="relative">
-                        <lucide-icon 
-                        name="circle-user"
-                        class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400">
-                    </lucide-icon>
+            <input [formControl]="email" type="email" placeholder="Email"
+              class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+              bg-slate-50 text-slate-600"/>
+          </div>
+        </div>
 
-                <input 
-                    type="text"
-                    id="fullName" 
-                    placeholder="Nome Completo"
-                    class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                    bg-slate-50 text-slate-600"/>
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm text-slate-700 mb-2">Email</label>
-                    <div class="relative">
-                        <lucide-icon 
-                        name="mail"
-                        class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400">
-                    </lucide-icon>
+        <div>
+          <label class="block text-sm text-slate-700 mb-2">Telefone</label>
+          <div class="relative">
+            <lucide-icon name="phone"
+              class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></lucide-icon>
 
-                <input 
-                    type="email" 
-                    placeholder="Email"
-                    class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                    bg-slate-50 text-slate-600"/>
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm text-slate-700 mb-2">Telefone</label>
-                    <div class="relative">
-                        <lucide-icon 
-                        name="phone"
-                        class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400">
-                    </lucide-icon>
+            <input [formControl]="phone" type="text" inputmode="numeric" 
+              placeholder="Telefone" (input)="onPhoneInput($event)" class="w-full pl-11 
+              pr-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none 
+              focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50 
+              text-slate-600"/>
+          </div>
+        </div>
 
-                <input 
-                    type="tel" 
-                    placeholder="Telefone"
-                    class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                    bg-slate-50 text-slate-600"/>
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm text-slate-700 mb-2">Localização</label>
-                    <div class="relative">
-                    <lucide-icon 
-                        name="map-pin"
-                        class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400">
-                    </lucide-icon>
+        <div>
+          <label class="block text-sm text-slate-700 mb-2">Localização</label>
+          <div class="relative">
+            <lucide-icon name="map-pin"
+              class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></lucide-icon>
 
-                <input 
-                    type="text" 
-                    placeholder="Localização"
-                    class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                    bg-slate-50 text-slate-600"/>
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm text-slate-700 mb-2">Data de Nascimento</label>
-                    <div class="relative">
-                        <lucide-icon 
-                        name="calendar"
-                        class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400">
-                    </lucide-icon>
+            <input [formControl]="location" type="text" placeholder="Localização"
+              class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+              bg-slate-50 text-slate-600"/>
+          </div>
+        </div>
 
-                <input 
-                    type="date" 
-                    class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                    bg-slate-50 text-slate-600"/>
-                    </div>
-                </div>
+        <div>
+          <label class="block text-sm text-slate-700 mb-2">Data de Nascimento</label>
+          <div class="relative">
+            <lucide-icon name="calendar"
+              class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></lucide-icon>
 
-            </div>
-            <div>
-            <label class="block text-sm text-slate-700 mb-2">Biografia</label>
+            <input [formControl]="birthDate" type="date" 
+              class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+              bg-slate-50 text-slate-600"/>
+          </div>
+        </div>
 
-            <div class="relative">
-                <lucide-icon
-                name="pencil"
-                class="absolute left-2 top-2 w-4 h-4 text-slate-400 pointer-events-none">
-                </lucide-icon>
+      </div>
 
-                <textarea
-                rows="4"
-                placeholder="Quem sou eu?"
-                class="w-full pl-10 pr-3 py-2.5 border border-slate-200 rounded-lg
-                        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                        bg-slate-50 text-slate-600"></textarea>
-            </div>
-            </div>
+        <div>
+        <label class="block text-sm text-slate-700 mb-2">Biografia</label>
+        <div class="relative">
+            <lucide-icon name="pencil"
+            class="absolute left-2 top-2 w-4 h-4 text-slate-400 pointer-events-none">
+            </lucide-icon>
+
+            <textarea [formControl]="bio" rows="4" placeholder="Quem sou eu?"
+            class="w-full pl-10 pr-3 py-2.5 border border-slate-200 rounded-lg
+            bg-slate-50 text-slate-600"></textarea>
+        </div>
+        </div>
 
     </div>
-
-</div>
+  </div>
 </div>

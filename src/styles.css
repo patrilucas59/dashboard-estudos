@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import 'ngx-toastr/toastr';
 @import "tailwindcss";
 
 .btn-filter {
@@ -10,3 +10,4 @@
 .table-head-cell {
     @apply text-left px-4 py-5 text-xs text-slate-600 uppercase tracking-wider;
 }
+
