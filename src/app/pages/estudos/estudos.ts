@@ -1,10 +1,12 @@
-import { statusConfig } from './../../types/status-config';
 import { Component } from '@angular/core';
-import { StatsCard } from '../../components/stats-card/stats-card';
-import { LucideAngularModule } from 'lucide-angular';
 import { NgFor } from '@angular/common';
-import { StudiesFilters } from '../../components/studies-filters/studies-filters';
+import { LucideAngularModule } from 'lucide-angular';
+
+import { statusConfig } from './../../types/status-config';
 import { Study } from '../../types/study';
+
+import { StatsCard } from '../../components/stats-card/stats-card';
+import { StudiesFilters, StudyStatus } from '../../components/studies-filters/studies-filters';
 import { StudiesTable } from '../../components/studies-table/studies-table';
 
 @Component({
@@ -22,22 +24,18 @@ export class Estudos {
     { title: 'Sessões Realizadas', value: '89', icon: 'book-open', color: '#4F4655' },
     { title: 'Este Mês', value: '42h', icon: 'calendar', color: '#4F4655' },
     { title: 'Média Diária', value: '3.5h', icon: 'medal', color: '#4F4655' },
-  ]
+  ];
+
+  searchTerm = '';
+  activeStatus: StudyStatus = 'todos';
 
   private statusPriority: Record<Study['status'], number> = {
     'em-andamento': 1,
     'planejado': 2,
     'concluido': 3,
-  }
+  };
 
-  get orderedStudies(): Study[] {
-    return [...this.studies].sort(
-      (a, b) =>
-        this.statusPriority[a.status] - this.statusPriority[b.status]
-    )
-  }
-
-studies: Study[] = [
+  studies: Study[] = [
     {
       id: '1',
       subject: 'Língua Portuguesa',
@@ -109,4 +107,25 @@ studies: Study[] = [
       color: 'bg-violet-500',
     },
   ];
+
+  get filteredStudies(): Study[] {
+    const search = this.searchTerm.toLowerCase().trim();
+
+    return this.studies
+      .filter((s) => {
+        const matchesStatus =
+          this.activeStatus === 'todos' || s.status === this.activeStatus;
+
+        const matchesSearch =
+          !search ||
+          s.subject.toLowerCase().includes(search) ||
+          s.topic.toLowerCase().includes(search);
+
+        return matchesStatus && matchesSearch;
+      })
+      .sort(
+        (a, b) =>
+          this.statusPriority[a.status] - this.statusPriority[b.status]
+      );
+  }
 }

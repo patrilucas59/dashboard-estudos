@@ -1,3 +1,4 @@
+import { filter } from 'rxjs';
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
@@ -66,4 +67,14 @@ export class Metas {
       priority: 'alta'
     }
   ]
+
+  goalSearchTerm = '';
+
+  get filteredGoals() {
+    const search = this.goalSearchTerm.toLowerCase().trim();
+
+    return this.goals.filter(goal => 
+      !search || goal.title.toLowerCase().includes(search)
+    )
+  }
 }

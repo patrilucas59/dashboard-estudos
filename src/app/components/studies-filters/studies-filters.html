@@ -7,31 +7,17 @@
             class="w-4 h-4 text-slate-400 absolute left-2 top-1/2 -translate-y-1/2">
         </lucide-icon>
 
-        <input type="text" 
-        placeholder="Busca por matéria ou tópico..."
-        class="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        <input
+          type="text"
+          placeholder="Busca por matéria ou tópico..."
+          class="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg text-sm
+                focus:outline-none focus:ring-2 focus:ring-blue-500"
+          (input)="onSearch($any($event.target).value)"
         />
         </div>
 
-        <div class="flex gap-2">
-            <button class="flex items-center gap-2 px-4 py-2.5 border border-slate-200 rounded-lg hover:bg-slate-100 transition-colors text-sm text-slate-700 cursor-pointer">
-                <lucide-icon name="filter" class="w-4 h-4"></lucide-icon>
-                <span>Filtros</span>
-            </button>
-
-            <button class="flex items-center gap-2 px-4 py-2.5 border border-slate-200 rounded-lg hover:bg-slate-100 transition-colors text-sm text-slate-700 cursor-pointer">
-                <lucide-icon name="calendar" class="w-4 h-4"></lucide-icon>
-                <span>Período</span>
-            </button>
-        </div>
     </div>
 
-    <div class="flex gap-5 mt-4 flex-wrap">
-        <button class="btn-filter">Todos</button>
-        <button class="btn-filter">Concluídos</button>
-        <button class="btn-filter">Em andamento</button>
-        <button class="btn-filter">Planejados</button>
-    </div>
 </div>
 </ng-container>
 
@@ -50,27 +36,9 @@
           placeholder="Buscar metas..."
           class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg 
                  focus:outline-none focus:ring-2 focus:ring-blue-500"
+          (input)="onSearch($any($event.target).value)" 
         />
       </div>
-
-      <div class="flex gap-2">
-        <button
-          *ngFor="let f of filters"
-          (click)="activeFilter = f.id"
-          class="px-4 py-2 rounded-lg transition-colors border"
-          [ngClass]="activeFilter === f.id
-            ? 'bg-blue-50 text-blue-600 border-blue-200'
-            : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
-          "
-        >
-          {{ f.label }}
-        </button>
-      </div>
-
-      <button class="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg hover:bg-slate-100 transition-colors">
-        <lucide-icon name="filter" class="w-4 h-4"></lucide-icon>
-        <span class="hidden md:inline">Filtros</span>
-      </button>
 
     </div>
   </div>

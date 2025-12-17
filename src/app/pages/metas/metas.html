@@ -10,12 +10,6 @@
             </p>
         </div>
 
-        <button class="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-sm cursor-pointer">
-        <span>
-            + Nova Meta
-        </span>        
-    </button>
-
     </div>
 
     <div class="rounded-xl flex justify-evenly gap-4">
@@ -31,12 +25,15 @@
 
     <div class="flex flex-col justify-center gap-3 mb-7">
 
-        <app-studies-filters variant="goals"></app-studies-filters>
+        <app-studies-filters 
+            variant="goals"
+            (searchChange)="goalSearchTerm = $event"
+        ></app-studies-filters>
 
     </div>
 
     <div class="flex flex-col justify-between">
-        <ng-container *ngFor="let goal of goals">
+        <ng-container *ngFor="let goal of filteredGoals">
             <app-course-card
             variant="goal"
             [title]="goal.title"

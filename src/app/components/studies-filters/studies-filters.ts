@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
+
+export type StudyStatus = 'concluido' | 'em-andamento' | 'planejado' | 'todos';
 
 @Component({
   selector: 'app-studies-filters',
@@ -12,12 +14,19 @@ import { LucideAngularModule } from 'lucide-angular';
 export class StudiesFilters {
   @Input() variant: 'studies' | 'goals' = 'studies';
 
-  activeFilter = 'todas';
+  @Output() searchChange = new EventEmitter<string>();
+  @Output() statusChange = new EventEmitter<StudyStatus>();
 
-  filters = [
-    { id: 'todas', label: 'Todas' },
-    { id: 'ativas', label: 'Ativas' },
-    { id: 'concluidas', label: 'Concluídas' },
-    { id: 'atrasadas', label: 'Atrasadas' },
-  ]
+  searchTerm = '';
+  activeStatus: StudyStatus = 'todos';
+
+  onSearch(value: string) {
+    this.searchTerm = value;
+    this.searchChange.emit(value);
+  }
+
+  onStatusSelect(status: StudyStatus) {
+    this.activeStatus = status;
+    this.statusChange.emit(status);
+  }
 }

@@ -10,12 +10,6 @@
             </p>
         </div>
 
-    <button class="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-sm cursor-pointer">
-        <span>
-            + Nova Sessão
-        </span>
-    </button>
-
     </div>
 
     <div class="rounded-xl flex justify-evenly gap-4">
@@ -38,12 +32,16 @@
                 Próximas sessões e atividades planejadas
             </h2>
         </div>
-        <app-studies-filters></app-studies-filters>
+        <app-studies-filters
+            variant="studies"
+            (searchChange)="searchTerm = $event"
+            (statusChange)="activeStatus = $event"
+        ></app-studies-filters>
 
     </div>
 
         <app-studies-table
-            [studies]="orderedStudies"
+            [studies]="filteredStudies"
             [statusConfig]="statusConfig">  
         </app-studies-table>
 </div>
