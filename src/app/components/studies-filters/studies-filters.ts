@@ -14,14 +14,16 @@ export type StudyStatus = 'concluido' | 'em-andamento' | 'planejado' | 'todos';
 export class StudiesFilters {
   @Input() variant: 'studies' | 'goals' = 'studies';
 
+  @Input() resultsCount = 0;
+  @Input() searchQuery = '';
+  @Input() emptyMessage = 'Nenhum resultado encontrado';
+
   @Output() searchChange = new EventEmitter<string>();
   @Output() statusChange = new EventEmitter<StudyStatus>();
 
-  searchTerm = '';
   activeStatus: StudyStatus = 'todos';
 
   onSearch(value: string) {
-    this.searchTerm = value;
     this.searchChange.emit(value);
   }
 

@@ -15,8 +15,14 @@
           (input)="onSearch($any($event.target).value)"
         />
         </div>
-
     </div>
+
+    <ng-container *ngIf="resultsCount === 0 && searchQuery">
+      <p class="text-slate-500 text-sm mt-2">
+        {{ emptyMessage }}
+      </p>
+    </ng-container>
+
 
 </div>
 </ng-container>
@@ -41,6 +47,13 @@
       </div>
 
     </div>
+
+    <ng-container *ngIf="resultsCount === 0 && searchQuery">
+      <p class="text-slate-500 text-sm mt-2">
+        {{ emptyMessage }}
+      </p>
+    </ng-container>
+
   </div>
 
 </ng-container>

@@ -34,6 +34,9 @@
         </div>
         <app-studies-filters
             variant="studies"
+            [resultsCount]="filteredStudies.length"
+            [searchQuery]="searchTerm"
+            emptyMessage="Nenhuma matéria encontrada"
             (searchChange)="searchTerm = $event"
             (statusChange)="activeStatus = $event"
         ></app-studies-filters>
@@ -42,6 +45,7 @@
 
         <app-studies-table
             [studies]="filteredStudies"
-            [statusConfig]="statusConfig">  
+            [statusConfig]="statusConfig">
         </app-studies-table>
+
 </div>
