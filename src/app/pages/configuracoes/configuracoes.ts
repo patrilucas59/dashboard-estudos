@@ -4,15 +4,26 @@ import { UserProfileService } from '../../services/user-profile.service';
 import { LucideAngularModule } from 'lucide-angular';
 import { NgIf } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { ManualModal } from '../../shared/manual-modal/manual-modal';
 
 @Component({
   selector: 'app-configuracoes',
   standalone: true,
-  imports: [LucideAngularModule, NgIf, ReactiveFormsModule],
+  imports: [LucideAngularModule, NgIf, ReactiveFormsModule, ManualModal],
   templateUrl: './configuracoes.html',
   styleUrls: ['./configuracoes.css']
 })
 export class Configuracoes implements OnInit {
+  isManualOpen = false;
+
+  openManual() {
+    this.isManualOpen = true;
+  }
+
+  closeManual() {
+    this.isManualOpen = false;
+  }
+
   profileForm!: FormGroup;
   isEditing = false;
 

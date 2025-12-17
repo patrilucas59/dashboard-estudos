@@ -1,0 +1,70 @@
+<div
+  *ngIf="isOpen"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/20
+         backdrop-blur-sm transition-opacity">
+
+  <div
+    class="absolute inset-0"
+    (click)="onClose()">
+  </div>
+
+  <div
+    class="relative bg-white w-full max-w-2xl mx-4 rounded-xl shadow-xl
+           transform transition-all duration-300 ease-out
+           animate-modal-enter">
+
+    <div class="flex items-center justify-between p-5 border-b border-slate-200">
+      <h2 class="text-lg font-semibold text-slate-800">
+        Manual do Foco +
+      </h2>
+
+      <button
+        (click)="onClose()"
+        class="text-slate-400 hover:text-slate-600 transition-colors">
+        ✕
+      </button>
+    </div>
+
+        <div class="p-6 space-y-6 max-h-[70vh] overflow-x-auto text-slate-600 text-sm">
+
+            <section>
+                <h3 class="text-slate-800 font-semibold mb-1">Objetivo</h3>
+                <p>                   
+                    O Foco + foi criado para ajudar você a organizar seus estudos,
+                    acompanhar sua evolução e se desafiar constantemente.
+                </p>
+            </section>
+
+            <section>
+                <h3 class="text-slate-800 font-semibold mb-1">Estudos</h3>
+                <p>                   
+                    Na página de Estudos você encontra suas atividades obrigatórias.
+                    Cada entrega gera pontos de experiência (XP).
+                </p>
+            </section>
+
+            <section>
+                <h3 class="text-slate-800 font-semibold mb-1">Metas</h3>
+                <p>                   
+                    As metas incentivam desafios pessoais e recompensam com XP extra.
+                </p>
+            </section>
+
+            <section>
+                <h3 class="text-slate-800 font-semibold mb-1">Relatórios</h3>
+                <p>
+                    Visualize sua evolução, histórico e desempenho geral.
+                </p>
+            </section>
+        </div>
+
+        <div class="p-4 border-t border-slate-200 flex justify-end">
+        <button (click)="onClose()"
+                class="px-4 py-2 bg-blue-600 hover:bg-blue-700
+                        text-white rounded-lg transition cursor-pointer">
+            Entendi
+        </button>
+        </div>
+
+    </div>
+</div>

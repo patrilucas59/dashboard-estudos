@@ -1,6 +1,6 @@
 <div class="px-6 lg:px-10 py-6 w-full max-w-7xl mx-auto space-y-10">
-
-    <div>
+  
+  <div>
       <h1 class="text-slate-600 text-xl font-semibold">
         Conte mais sobre você
       </h1>
@@ -16,18 +16,24 @@
         <div class="bg-blue-50 text-blue-600 p-2 rounded-lg flex items-center justify-center">
           <lucide-icon name="circle-user" class="w-5 h-5"></lucide-icon>
         </div>
-
+        
         <div>
           <h2 class="text-slate-900">Perfil do Usuário</h2>
           <p class="text-slate-600 text-sm">Gerencie suas informações pessoais</p>
         </div>
       </div>
-
-      <div class="flex gap-2">
-        <button *ngIf="!isEditing" (click)="toggleEdit()"
-          class="bg-slate-200 hover:bg-slate-300 text-slate-700 p-2 rounded-lg cursor-pointer">
-          Editar
+      
+      <div class="flex gap-2 flex-col md:flex-row">
+        <button (click)="openManual()"
+          class="flex items-center gap-2 text-slate-600 hover:text-blue-600 bg-slate-100
+          hover:bg-blue-50 px-3 py-2 rounded-lg transition-colors cursor-pointer">
+          <lucide-icon name="scroll-text" class="w-4 h-4"></lucide-icon>
+          <span class="text-sm">Manual</span>
         </button>
+        <button *ngIf="!isEditing" (click)="toggleEdit()"
+        class="bg-slate-200 hover:bg-slate-300 text-slate-700 p-2 rounded-lg cursor-pointer">
+        Editar
+      </button>
 
         <button *ngIf="isEditing" (click)="saveProfile()"
           class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg cursor-pointer">
@@ -148,3 +154,8 @@
     </div>
   </div>
 </div>
+
+<app-manual-modal
+  [isOpen]="isManualOpen"
+  (close)="closeManual()">
+</app-manual-modal>

@@ -7,7 +7,8 @@ import { importProvidersFrom } from '@angular/core';
 import { provideToastr } from 'ngx-toastr';
 import { LucideAngularModule, House, Goal, BookOpen, File, EllipsisVertical, Clock, TrendingUp, 
   Settings, CircleUser, Calendar, Medal, Search, Filter, CheckCircle2, PlayCircle, Circle, Target, 
-  Camera, Mail, Phone, MapPin, HandCoins, Rocket, ClipboardMinus, Crown, Activity, Pencil } from 'lucide-angular';
+  Camera, Mail, Phone, MapPin, HandCoins, Rocket, ClipboardMinus, Crown, Activity, Pencil, 
+  ScrollText, Settings2} from 'lucide-angular';
 
 bootstrapApplication(App, {
   providers: [
@@ -49,7 +50,9 @@ bootstrapApplication(App, {
         Crown,
         Activity,
         MapPin,
-        Pencil
+        Pencil,
+        ScrollText,
+        Settings2
       })
     )
   ]
