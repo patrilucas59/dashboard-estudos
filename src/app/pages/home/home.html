@@ -1,6 +1,6 @@
-<div class="px-6 lg:px-10 py-8 w-full max-w-7xl mx-auto space-y-10">
+<div class="px-0 sm:px-0 lg:px-10 py-8 w-full max-w-7xl mx-auto space-y-10">
 
-    <div class="flex justify-between items-center">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
 
         <div>
             <h1 class="text-slate-600 text-xl font-semibold">
@@ -13,12 +13,9 @@
 
     </div>
 
-    <!-- KIPs (indicadores chave de desempenho) -->
-        <div class="flex flex-wrap gap-3">
-
+        <div class="grid grid:cols-1 sm:grid-cols lg:grid-cols-4 gap-4">
             <ng-container *ngFor="let s of kpis">
-
-                <div class="w-full sm:w-[48%] lg:w-[24%] shadow p-3 rounded-md bg-white">
+                <div class="shadow p-3 rounded-md bg-white">
                     <app-stats-card
                         [title]="s.title"
                         [value]="s.value"
@@ -27,48 +24,56 @@
                         [description]="s.description">
                     </app-stats-card>
                 </div>
-
             </ng-container>
-
         </div>
 
-     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <div class="lg:col-span-2 bg-white rounded-xl shadow p-5 overflow-hidden">
-            <h2 class="text-xl font-bold mb-4 flex items-center gap-2">Estudos Recentes</h2>
+        <div class="md:col-span-2 lg:col-span-2 bg-white rounded-xl shadow p-5 overflow-hidden">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                Estudos Recentes
+            </h2>
 
-            <div class="p-1">
-                <div class="flex flex-col gap-4">
-                    <ng-container *ngFor="let s of recentStudies">
-                        <app-course-card
-                            [title]="s.title"
-                            [subtitle]="s.subtitle"
-                            [time]="s.time"
-                            [updated]="s.updated"
-                            [status]="s.status">
-                        </app-course-card>
+            <div class="flex flex-col gap-3 sm:gap-4">
+                <ng-container *ngFor="let s of recentStudies">
+                    <app-course-card
+                        [title]="s.title"
+                        [subtitle]="s.subtitle"
+                        [time]="s.time"
+                        [updated]="s.updated"
+                        [status]="s.status">
+                    </app-course-card>
 
-                    </ng-container>
-                </div>
+                </ng-container>
             </div>
         </div>
-     <div class="bg-white rounded-xl shadow p-6 h-100 overflow-auto">
-        <h2 class="text-xl font-semibold mb-8">Progresso Atual por Matéria</h2>
 
-        <div class="mb-8">
-            <p class="font-medium">Língua Portuguesa<span class="float-right">100%</span></p>
+    <div class="bg-white rounded-xl shadow p-5 max-h-[420px] overflow-auto">
+        <h2 class="text-xl sm:text-xl font-semibold mb-6">
+            Progresso Atual por Matéria
+        </h2>
+
+        <div class="mb-6">
+            <p class="font-medium">
+                Língua Portuguesa<span class="float-right">100%</span>
+            </p>
             <app-progress-bar [progress]="100"></app-progress-bar>
         </div>
 
-        <div class="mb-8">
-            <p class="font-medium">Matemática<span class="float-right">75%</span></p>
+        <div class="mb-6">
+            <p class="font-medium">
+                Matemática<span class="float-right">75%</span>
+            </p>
             <app-progress-bar [progress]="75"></app-progress-bar>
         </div>
 
-        <div class="mb-8">
-            <p class="font-medium">História<span class="float-right">50%</span></p>
+        <div class="mb-6">
+            <p class="font-medium">
+                História<span class="float-right">50%</span>
+            </p>
             <app-progress-bar [progress]="50"></app-progress-bar>
         </div>
      </div>
-     </div>
+
+    </div>
 </div>

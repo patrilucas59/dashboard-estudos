@@ -1,12 +1,21 @@
-<div class="stats-card border-l p-4 flex items-center gap-3" [style.border-color]="color">
-    <div class="icon flex items-center justify-center rounded-md shadow w-11 h-11" [style.background]="color">
+<div class="stats-card border-l p-4 flex items-center justify-center gap-3 md:gap-4 rounded-lg 
+    bg-white transition-shadow hover:shadow-md" [style.border-color]="color">    
+    <div class="icon flex items-center justify-center rounded-md shadow w-11 h-11 md:w-13 
+    md:h-13" [style.background]="color">
         <lucide-icon [name]="icon" class="w-6 h-6 text-white"></lucide-icon>
     </div>
 
-    <div class="content">
-        <h3 class="text-sm font-medium text-gray-600">{{ title }}</h3>
-        <p class="value text-2xl font-bold">{{ value }}</p>
+    <div class="content flex flex-col leading-tight">
+        <h3 class="text-sm sm:text-sm md:text-base font-medium text-slate-600">
+            {{ title }}
+        </h3>
 
-        <small *ngIf="description" class="text-gray-500 text-xs">{{ description }}</small>
+        <p class="value text-xl md:text-2xl font-bold text-slate-800">
+            {{ value }}
+        </p>
+
+        <small *ngIf="description" class="text-gray-500 text-xs">
+            {{ description }}
+        </small>
     </div>
 </div>

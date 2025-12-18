@@ -1,4 +1,4 @@
-<div class="px-6 lg:px-10 py-8 w-full max-w-7xl mx-auto space-y-10">
+<div class="px-4 sm:px-6 lg:px-10 py-6 sm:py-8 w-full max-w-7xl mx-auto space-y-8 sm:space-y-10">
     <div class="flex justify-between items-center">
 
         <div>
@@ -12,19 +12,22 @@
 
     </div>
 
-    <div class="rounded-xl flex justify-evenly gap-4">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+
         <ng-container *ngFor="let s of historicGoals">
+        <div class="shadow p-3 rounded-md bg-white">
             <app-stats-card
-                [title]="s.title"
-                [value]="s.value"
-                [icon]="s.icon"
-                [color]="s.color">
+            [title]="s.title"
+            [value]="s.value"
+            [icon]="s.icon"
+            [color]="s.color">
             </app-stats-card>
+        </div>
         </ng-container>
+    
     </div>
 
-    <div class="flex flex-col justify-center gap-3 mb-7">
-
+    <div class="flex flex-col gap-3 mb-6 sm:mb-7">
     <app-studies-filters
         variant="goals"
         [resultsCount]="filteredGoals.length"
@@ -32,10 +35,9 @@
         emptyMessage="Nenhuma meta encontrada"
         (searchChange)="goalSearchTerm = $event"
     ></app-studies-filters>
-
     </div>
 
-    <div class="flex flex-col justify-between">
+    <div class="flex flex-col gap-4 sm:gap-5">
         <ng-container *ngFor="let goal of filteredGoals">
             <app-course-card
             variant="goal"

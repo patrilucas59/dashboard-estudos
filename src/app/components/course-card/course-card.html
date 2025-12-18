@@ -1,30 +1,37 @@
-<div *ngIf="variant === 'default'"
-  class="bg-white p-4 rounded-xl shadow flex flex-col gap-3 hover:shadow-md transition relative">
+<div *ngIf="variant === 'default'" class="bg-white p-4 rounded-xl shadow flex flex-col gap-3 
+  hover:shadow-md transition relative">
 
-  <div class="flex justify-between items-start">
+  <div class="flex justify-between items-start gap-2">
     <div>
-      <h3 class="font-semibold text-lg leading-tight">{{ title }}</h3>
-      <p class="text-gray-500 text-sm">{{ subtitle }}</p>
+      <h3 class="font-semibold text-base sm:text-lg leading-tight">
+        {{ title }}
+      </h3>
+      <p class="text-gray-500 text-xs sm:text-xs">
+        {{ subtitle }}
+      </p>
     </div>
 
     <lucide-icon name="ellipsis-vertical" class="text-gray-500 cursor-pointer"></lucide-icon>
   </div>
 
-  <div class="flex flex-row items-center text-sm text-gray-700 gap-3">
+  <div class="flex flex-col sm:flex-row sm:items-center text-xs sm:text-sm text-gray-700 gap-2">
 
     <div class="flex items-center gap-1">
-      <lucide-icon name="clock"></lucide-icon>
+      <lucide-icon name="clock" class="w-4 h-4"></lucide-icon>
       <span>{{ time }}</span>
     </div>
 
-    <span class="text-gray-300">•</span>
+    <span class="hidden sm:inline text-gray-300">•</span>
 
-    <span class="text-gray-500">{{ updated }}</span>
+    <span class="text-gray-500">
+      {{ updated }}
+    </span>
 
-    <span class="text-gray-300">•</span>
+    <span class="hidden sm:inline text-gray-300">•</span>
+
 
     <span
-      class="px-2 py-1 rounded-full text-xs font-medium"
+      class="px-2 py-1 rounded-full text-xs font-medium w-fit"
       [ngClass]="{
         'bg-green-100 text-green-600': status === 'Concluído',
         'bg-blue-100 text-blue-600': status === 'Em andamento',
@@ -37,10 +44,10 @@
   </div>
 </div>
 
-<div *ngIf="variant === 'goal'"
-  class="bg-white p-6 rounded-xl shadow hover:shadow-md transition flex flex-col gap-4 mt-5">
+<div *ngIf="variant === 'goal'" class="bg-white p-4 sm:p-6 rounded-xl shadow hover:shadow-md 
+  transition flex flex-col gap-4 mt-5">
 
-  <div class="flex justify-between items-start">
+  <div class="flex justify-between items-start gap-3">
 
     <div class="flex items-start gap-3">
       <div class="bg-blue-100 p-2 rounded-lg">
@@ -48,8 +55,10 @@
       </div>
 
       <div>
-        <div class="flex items-center gap-2">
-          <h3 class="font-semibold text-lg">{{ title }}</h3>
+        <div class="flex flex-wrap items-center gap-2">
+          <h3 class="font-semibold text-base sm:text-lg">
+            {{ title }}
+          </h3>
 
           <span
             class="px-2 py-0.5 rounded-full text-xs"
@@ -63,34 +72,42 @@
           </span>
         </div>
 
-        <p class="text-gray-500 text-sm">{{ subtitle }}</p>
+        <p class="text-gray-500 text-xs sm:text-sm mt-1">
+          {{ subtitle }}
+        </p>
       </div>
     </div>
 
-    <lucide-icon name="ellipsis-vertical"
-      class="text-gray-500 cursor-pointer"></lucide-icon>
+    <button class="ml-auto" [class.pointer-events-none]="status === 'concluido'"
+        [class.opacity-40]="status === 'concluido'" aria-disabled="true">
+        <lucide-icon
+          name="ellipsis-vertical"
+          class="text-gray-600">
+        </lucide-icon>
+      </button>
+
   </div>
 
-  <div class="flex justify-between text-sm text-gray-600">
+  <div class="flex justify-between text-xs sm:text-sm text-gray-600">
     <span>{{ currentHours }} / {{ totalHours }} horas</span>
     <span>{{ progress }}%</span>
   </div>
 
   <app-progress-bar [progress]="progress" size="md" color="bg-blue-500"></app-progress-bar>
 
-  <div class="flex items-center gap-4 mt-2">
+  <div class="flex flex-wrap items-center gap-2 sm:gap-4 mt-2 text-xs sm:text-sm">
 
     <div class="flex items-center gap-1 text-gray-600">
-      <lucide-icon name="calendar"></lucide-icon>
+      <lucide-icon name="calendar" class="w-4 h-4"></lucide-icon>
       <span>em 23 dias</span>
     </div>
 
-    <span class="px-2 py-1 rounded-lg bg-blue-100 text-blue-600 text-sm flex items-center gap-1">
-      <lucide-icon name="trending-up" size="16"></lucide-icon>
+    <span class="px-2 py-1 rounded-lg bg-blue-100 text-blue-600 flex items-center gap-1">
+      <lucide-icon name="trending-up" size="14"></lucide-icon>
       Em Progresso
     </span>
 
-    <span class="px-2 py-1 rounded-lg bg-gray-100 text-gray-700 text-sm">
+    <span class="px-2 py-1 rounded-lg bg-gray-100 text-gray-700">
       {{ subject }}
     </span>
 

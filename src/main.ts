@@ -8,7 +8,8 @@ import { provideToastr } from 'ngx-toastr';
 import { LucideAngularModule, House, Goal, BookOpen, File, EllipsisVertical, Clock, TrendingUp, 
   Settings, CircleUser, Calendar, Medal, Search, Filter, CheckCircle2, PlayCircle, Circle, Target, 
   Camera, Mail, Phone, MapPin, HandCoins, Rocket, ClipboardMinus, Crown, Activity, Pencil, 
-  ScrollText, Settings2} from 'lucide-angular';
+  ScrollText, Settings2,
+  Menu, X} from 'lucide-angular';
 
 bootstrapApplication(App, {
   providers: [
@@ -52,7 +53,9 @@ bootstrapApplication(App, {
         MapPin,
         Pencil,
         ScrollText,
-        Settings2
+        Settings2,
+        Menu,
+        X
       })
     )
   ]

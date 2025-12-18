@@ -1,8 +1,8 @@
 <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
-    <div class="overflow-x-auto">
+    <div class="relative overflow-x-auto sm:overflow-visible">
 
         <table class="w-full">
-        <thead class="bg-slate-50 border-b border-slate-200">
+        <thead class="bg-slate-50 border-b border-slate-200 hidden sm:table-header-group">
             <tr>
                 <th class="table-head-cell">Matéria / Tópico</th>
                 <th class="table-head-cell">Data</th>
@@ -14,42 +14,69 @@
         </thead>
 
             <tbody>
-                    <tr
-                    *ngFor="let s of studies"
-                    class="border-b-0 transition"
+                <tr *ngFor="let s of studies" class="block sm:table-row border-b 
+                    sm:border-b-0 transition mb-4 sm:mb-0 rounded-lg sm:rounded-none
+                    bg-white sm:bg-transparent shadow-sm sm:shadow-none"
                     [ngClass]="{
-                        'bg-blue-50 border-l-4 border-blue-500': s.status === 'em-andamento',
+                        'border-l-4 border-blue-500': s.status === 'em-andamento',
                         'bg-slate-50': s.status === 'planejado'
                     }"
                     >
 
+                    <td class="block sm:table-cell px-6 py-3">
+                    <span class="sm:hidden text-xs text-slate-400 uppercase">
+                        Matéria
+                    </span>
 
-                    <td class="px-6 py-4">
-                        <h3 class="font-semibold">{{ s.subject }}</h3>
-                        <p class="text-sm text-gray-600">{{ s.topic }}</p>
+                    <h3 class="font-semibold">
+                        {{ s.subject }}
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        {{ s.topic }}
+                    </p>
                     </td>
 
-                    <td class="px-6 py-4 text-sm">{{ s.date }}</td>
+                    <td class="block sm:table-cell px-6 py-3 text-sm">
+                    <span class="sm:hidden text-xs text-slate-400 uppercase">
+                        Data
+                    </span>
+                    {{ s.date }}
+                    </td>
                     
-                    <td class="px-6 py-4 text-sm">{{ s.startTime }}</td>
-
-                    <td class="px-6 py-4 text-sm">{{ s.duration }}</td>
-
-                    <td class="px-6 py-4">
-                        <span 
-                            [ngClass]="statusConfig[s.status].bg"
-                            class="px-3 py-1 rounded-full text-xs flex items-center gap-1 w-max"
-                            >
-                        <lucide-icon 
-                            [name]="statusConfig[s.status].icon"
-                            class="h-4 text-center">
-                        </lucide-icon>
-                        {{ statusConfig[s.status].label }}
-                        </span>
+                    <td class="block sm:table-cell px-6 py-3 text-sm">
+                    <span class="sm:hidden text-xs text-slate-400 uppercase">
+                        Horário
+                    </span>
+                    {{ s.startTime }}
                     </td>
 
-                    <td class="relative px-6 py-4 text-right">
-                        <lucide-icon 
+                    <td class="block sm:table-cell px-6 py-3 text-sm">
+                    <span class="sm:hidden text-xs text-slate-400 uppercase">
+                        Duração
+                    </span>
+                    {{ s.duration }}
+                    </td>
+
+                    <td class="block sm:table-cell px-6 py-3">
+                        <span class="sm:hidden text-xs text-slate-400 uppercase">
+                            Status
+                        </span>
+
+                        <span
+                            [ngClass]="statusConfig[s.status].bg"
+                            class="px-3 py-1 rounded-full text-xs flex items-center gap-1 w-max mt-1"
+                        >
+                            <lucide-icon
+                            [name]="statusConfig[s.status].icon"
+                            class="h-4">
+                            </lucide-icon>
+                            {{ statusConfig[s.status].label }}
+                        </span>
+                        </td>
+
+                    <td class="block sm:table-cell px-6 py-3 text-right">
+                    <div class="flex justify-end sm:block">
+                        <lucide-icon
                         name="ellipsis-vertical"
                         class="cursor-pointer"
                         [ngClass]="{
@@ -58,7 +85,7 @@
                         }"
                         (click)="toggleMenu(s.id)">
                         </lucide-icon>
-
+                    </div>
 
                         <div *ngIf="openMenuId === s.id"
                         class="absolute right-6 mt-2 w-50 bg-white border border-slate-200 rounded-lg

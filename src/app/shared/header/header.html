@@ -1,6 +1,8 @@
-<header class="w-full h-16 bg-white px-4 lg:px-7 py-4 flex items-center justify-between shadow">
-  
-  <h1 class="text-2xl font-bold text-gray-800">{{ pageTitle }}</h1>
+<header class="w-full h-16 bg-white px-4 py-4 flex items-center justify-between shadow lg:px-6">
+
+  <h1 class="text-xl md:text-2xl font-bold text-gray-800 ml-12 sm:ml-14 lg:ml-0">
+    {{ pageTitle }}
+  </h1>
 
   <div class="flex items-center gap-4">
     <button class="relative">
@@ -9,9 +11,9 @@
     </button>
 
     <a routerLink="/configuracoes" class="transition-transform duration-200 hover:scale-90">
-    <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-      <lucide-icon name="circle-user" class="bi bi-person text-xl text-gray-600"></lucide-icon>
-    </div>
+      <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+        <lucide-icon name="circle-user" class="text-xl text-gray-600"></lucide-icon>
+      </div>
     </a>
   </div>
 

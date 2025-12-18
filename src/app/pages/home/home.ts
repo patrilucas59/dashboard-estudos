@@ -29,7 +29,7 @@ export class Home {
       description: 'nesta semana', 
     },
     { 
-      title: 'Matérias Concluídas', 
+      title: 'Estudos Fechados', 
       value: 3, 
       icon: 'book-open', 
       color: '#16A34A', 
@@ -43,7 +43,7 @@ export class Home {
       description: 'da meta semanal', 
     },
     { 
-      title: 'Frequência', 
+      title: 'Frequência Atual', 
       value: '4 dias', 
       icon: 'goal', 
       color: '#DC2626', 
