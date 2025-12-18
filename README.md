@@ -59,10 +59,10 @@
 
 ## Preview da Aplicação
 
-![Home - Foco +](public/foco-home.png)
+![Home - Foco +](public/foco+.png)
 
 ### Estudos – Gerenciamento de Atividades
-![Relatórios - Foco +](public/foco-estudos.png)
+![Relatório - Foco +](public/foco-plus.png)
 
 ### Rodando localmente
 
