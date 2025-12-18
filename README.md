@@ -1,6 +1,6 @@
 # Foco + 🚀
 
-**Foco +** é uma aplicação web desenvolvida em **Angular** com o objetivo de auxiliar na organização e desafios pessoais, produvidade e acompanhamento de estudos. O projeto foi criado como parte do meu desenvolvimento técnico em Front-end, com focas em **boas práticas, UX e arquitetura escalável**.
+**Foco +** é uma aplicação web desenvolvida em **Angular** com o objetivo de auxiliar na organização e desafios pessoais, produtividade e acompanhamento de estudos. O projeto foi criado como parte do meu desenvolvimento técnico em Front-end, com foco em **boas práticas, UX e arquitetura escalável**.
 
 ---
 
@@ -10,7 +10,7 @@
 - Implementar **Reactive Forms** com validações
 - Trabalhar estados de UI (edição, loading, feedback)
 - Criação de uma base sólida para projetos front-end profissionais
-- Propor uma ideia de estudos engajadora para alunos estudar e se desafiar durante os estudos
+- Propor uma ideia de estudos engajadora para alunos estudarem e se desafiar durante os estudos
 
 ---
 
@@ -32,7 +32,7 @@
 - **Typescript** - tipagem estática e segurança
 - **Standalone Components** - arquitetura moderna de componentes
 - **Reactive Forms** - gerenciamento e validação de formulários
-- **RxJS** - programação reative e fluxo de dados
+- **RxJS** - programação reativa e fluxo de dados
 - **Tailwind CSS** - estilização do projeto e design responsivo
 - **ngx-toastr** - notificações visuais para feedback do usuário
 - **Lucide Icons** - biblioteca de ícones
@@ -55,8 +55,20 @@
 - Node.js (versão recomendada LTS)
 - Angular CLI
 
+---
+
+## Preview da Aplicação
+
+![Home - Foco +](public/foco-home.png)
+
+### Estudos – Gerenciamento de Atividades
+![Relatórios - Foco +](public/foco-estudos.png)
+
 ### Rodando localmente
+
+A aplicação estará disponível em:
+http://localhost:4200
 
 ```bash
 npm install
-ng serve
+ng serve```
