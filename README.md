@@ -61,7 +61,6 @@
 
 ![Home - Foco +](public/foco+.png)
 
-### Estudos – Gerenciamento de Atividades
 ![Relatório - Foco +](public/foco-plus.png)
 
 ### Rodando localmente
