@@ -60,7 +60,7 @@
 ## Preview da Aplicação
 
 ![Home - Foco +](public/foco+.png)
-
+---
 ![Relatório - Foco +](public/foco-plus.png)
 
 ### Rodando localmente
@@ -70,4 +70,4 @@ http://localhost:4200
 
 ```bash
 npm install
-ng serve```
+ng serve
