@@ -9,7 +9,6 @@ export type StudyStatus = 'concluido' | 'em-andamento' | 'planejado' | 'todos';
   standalone: true,
   imports: [CommonModule, LucideAngularModule],
   templateUrl: './studies-filters.html',
-  styleUrl: './studies-filters.css',
 })
 export class StudiesFilters {
   @Input() variant: 'studies' | 'goals' = 'studies';

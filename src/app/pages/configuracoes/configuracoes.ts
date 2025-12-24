@@ -11,7 +11,6 @@ import { ManualModal } from '../../shared/manual-modal/manual-modal';
   standalone: true,
   imports: [LucideAngularModule, NgIf, ReactiveFormsModule, ManualModal],
   templateUrl: './configuracoes.html',
-  styleUrls: ['./configuracoes.css']
 })
 export class Configuracoes implements OnInit {
   isManualOpen = false;

@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-chart-bar',
   imports: [],
   templateUrl: './chart-bar.html',
-  styleUrl: './chart-bar.css',
 })
 export class ChartBar {
 

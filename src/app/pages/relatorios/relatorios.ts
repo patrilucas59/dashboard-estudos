@@ -17,7 +17,6 @@ import { ReportTimeline } from '../../components/report-timeline/report-timeline
     ReportTimeline
   ],
   templateUrl: './relatorios.html',
-  styleUrl: './relatorios.css',
 })
 export class Relatorios {
 

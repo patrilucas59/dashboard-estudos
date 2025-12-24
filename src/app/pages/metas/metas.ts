@@ -11,7 +11,6 @@ import { CourseCard } from '../../components/course-card/course-card';
   standalone: true,
   imports: [CourseCard, StudiesFilters, StatsCard, LucideAngularModule, NgFor],
   templateUrl: './metas.html',
-  styleUrl: './metas.css',
 })
 export class Metas {
   historicGoals = [

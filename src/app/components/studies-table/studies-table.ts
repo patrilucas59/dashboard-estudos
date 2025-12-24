@@ -9,7 +9,6 @@ import { LucideAngularModule } from 'lucide-angular';
   standalone: true,
   imports: [NgClass, NgFor, LucideAngularModule, NgIf],
   templateUrl: './studies-table.html',
-  styleUrl: './studies-table.css',
 })
 export class StudiesTable {
   @Input() studies: Study[] = [];

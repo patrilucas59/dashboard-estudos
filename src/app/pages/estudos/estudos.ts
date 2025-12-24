@@ -14,7 +14,6 @@ import { StudiesTable } from '../../components/studies-table/studies-table';
   standalone: true,
   imports: [StudiesTable, StudiesFilters, StatsCard, LucideAngularModule, NgFor],
   templateUrl: './estudos.html',
-  styleUrl: './estudos.css',
 })
 export class Estudos {
   statusConfig = statusConfig;
