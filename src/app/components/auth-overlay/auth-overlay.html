@@ -1,0 +1,34 @@
+<div class="h-full w-full flex items-center justify-center px-12 pointer-events-auto text-white">
+  <div class="text-center space-y-6 max-w-sm">
+
+    <ng-container *ngIf="mode === 'login'; else registerText">
+      <h2 class="text-2xl font-bold">Novo por aqui?</h2>
+      <p class="text-blue-100 text-sm leading-relaxed">
+        Crie sua conta e comece a organizar seus estudos com foco,
+        consistência e resultados reais.
+      </p>
+      <button
+        (click)="register.emit()"
+        class="px-8 py-3 border-2 border-white rounded-lg
+               hover:bg-white hover:text-blue-700 transition cursor-pointer"
+      >
+        Criar Conta
+      </button>
+    </ng-container>
+
+    <ng-template #registerText>
+      <h2 class="text-2xl font-bold">Já tem conta?</h2>
+      <p class="text-blue-100 text-sm leading-relaxed">
+        Entre agora e continue sua jornada de estudos organizada e produtiva.
+      </p>
+      <button
+        (click)="login.emit()"
+        class="px-8 py-3 border-2 border-white rounded-lg
+               hover:bg-white hover:text-blue-700 transition cursor-pointer"
+      >
+        Fazer Login
+      </button>
+    </ng-template>
+
+  </div>
+</div>

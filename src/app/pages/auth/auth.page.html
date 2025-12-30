@@ -1,0 +1,44 @@
+<div class="min-h-screen w-full bg-gray-100 flex items-center justify-center p-4 relative">
+
+  <div class="w-full max-w-4xl h-[500px] bg-white rounded-xl shadow-lg overflow-hidden relative">
+
+    <div class="absolute inset-0 flex">
+
+      <div class="w-1/2 h-full flex items-center justify-center">
+        <app-login-form *ngIf="mode === 'login'"></app-login-form>
+      </div>
+
+      <div class="w-1/2 h-full flex items-center justify-center">
+        <app-register-form *ngIf="mode === 'register'"></app-register-form>
+      </div>
+
+    </div>
+
+    <div
+      class="absolute top-0 left-0 w-1/2 h-full
+             bg-blue-700 text-white
+             transition-transform duration-700 ease-in-out z-20
+             pointer-events-none"
+      [ngClass]="{
+        'translate-x-full': mode === 'login',
+        'translate-x-0': mode === 'register'
+      }"
+    >
+      <app-auth-overlay
+        [mode]="mode"
+        (login)="switchToLogin()"
+        (register)="switchToRegister()"
+      ></app-auth-overlay>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-5 text-center">
+    <p class="text-gray-600 text-xs">
+      <span class="text-black font-bold">Foco +</span>
+      é a plataforma ideal para você organizar seus estudos,
+      buscar consistência e grandes resultados.
+    </p>
+  </div>
+
+</div>

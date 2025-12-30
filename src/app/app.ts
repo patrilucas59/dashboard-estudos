@@ -1,8 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { Navbar } from './components/navbar/navbar';
 import { RouterOutlet } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
-import { Header } from './shared/header/header';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
@@ -10,10 +8,8 @@ import { ToastrService } from 'ngx-toastr';
   selector: 'app-root',
   standalone: true,
   imports: [
-    Navbar,
     RouterOutlet,
     LucideAngularModule,
-    Header,
     ReactiveFormsModule,
   ],
   templateUrl: './app.html',
