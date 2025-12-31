@@ -1,43 +1,52 @@
-<div class="min-h-screen w-full bg-gray-100 flex items-center justify-center p-4 relative">
+<div class="min-h-screen w-full bg-gray-100 flex items-center justify-center p-4">
 
-  <div class="w-full max-w-4xl h-[500px] bg-white rounded-xl shadow-lg overflow-hidden relative">
+  <div class="w-full max-w-4xl flex flex-col gap-6">
 
-    <div class="absolute inset-0 flex">
+    <div class="relative bg-white rounded-xl shadow-lg overflow-hidden h-[500px]">
 
-      <div class="w-1/2 h-full flex items-center justify-center">
-        <app-login-form *ngIf="mode === 'login'"></app-login-form>
+      <div class="absolute inset-0 flex flex-col md:flex-row">
+
+        <div class="w-full md:w-1/2 h-full flex items-center justify-center px-6">
+          <app-login-form *ngIf="mode === 'login'"></app-login-form>
+        </div>
+
+        <div class="w-full md:w-1/2 h-full flex items-center justify-center px-6">
+          <app-register-form *ngIf="mode === 'register'"></app-register-form>
+        </div>
+
       </div>
 
-      <div class="w-1/2 h-full flex items-center justify-center">
-        <app-register-form *ngIf="mode === 'register'"></app-register-form>
+      <div class="hidden md:block absolute top-0 left-0 w-1/2 h-full bg-blue-700 text-white transition-transform duration-700 ease-in-out z-20"
+        [ngClass]="{
+          'translate-x-full': mode === 'login',
+          'translate-x-0': mode === 'register'
+        }"
+      >
+        <app-auth-overlay
+          [mode]="mode"
+          (login)="switchToLogin()"
+          (register)="switchToRegister()"
+        ></app-auth-overlay>
+      </div>
+
+      <div class="md:hidden absolute bottom-0 left-0 w-full h-63 bg-blue-700 text-white transition-transform duration-700 ease-out z-20"
+        [ngClass]="{
+          'translate-y-0': mode === 'login',
+          '-translate-y-full': mode === 'register'
+        }"
+      >
+        <app-auth-overlay
+          [mode]="mode"
+          (login)="switchToLogin()"
+          (register)="switchToRegister()"
+        ></app-auth-overlay>
       </div>
 
     </div>
 
-    <div
-      class="absolute top-0 left-0 w-1/2 h-full
-             bg-blue-700 text-white
-             transition-transform duration-700 ease-in-out z-20
-             pointer-events-none"
-      [ngClass]="{
-        'translate-x-full': mode === 'login',
-        'translate-x-0': mode === 'register'
-      }"
-    >
-      <app-auth-overlay
-        [mode]="mode"
-        (login)="switchToLogin()"
-        (register)="switchToRegister()"
-      ></app-auth-overlay>
-    </div>
-
-  </div>
-
-  <div class="absolute bottom-5 text-center">
-    <p class="text-gray-600 text-xs">
-      <span class="text-black font-bold">Foco +</span>
-      é a plataforma ideal para você organizar seus estudos,
-      buscar consistência e grandes resultados.
+    <p class="text-center text-gray-600 text-xs md:text-sm px-4">
+      <span class="font-bold text-black">Foco +</span>
+      — organize seus estudos, construa consistência e alcance grandes resultados.
     </p>
   </div>
 
