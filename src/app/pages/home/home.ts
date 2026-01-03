@@ -22,28 +22,28 @@ export class Home {
 
   kpis= [
     { 
-      title: 'Horas Estudadas', 
+      title: 'Horas Estud.',
       value: '12h', 
       icon: 'clock', 
       color: '#4F46E5', 
       description: 'nesta semana', 
     },
     { 
-      title: 'Estudos Fechados', 
+      title: 'Estudos Fech.', 
       value: 3, 
       icon: 'book-open', 
       color: '#16A34A', 
       description: 'neste mês', 
     },
     { 
-      title: 'Progresso Semanal', 
+      title: 'Meta Sem.', 
       value: '64%', 
       icon: 'trending-up', 
       color: '#CDEE12', 
       description: 'da meta semanal', 
     },
     { 
-      title: 'Frequência Atual', 
+      title: 'Frequência', 
       value: '4 dias', 
       icon: 'goal', 
       color: '#DC2626', 

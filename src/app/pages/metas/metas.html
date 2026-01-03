@@ -12,15 +12,14 @@
 
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
-
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <ng-container *ngFor="let s of historicGoals">
         <div class="shadow p-3 rounded-md bg-white">
             <app-stats-card
-            [title]="s.title"
-            [value]="s.value"
-            [icon]="s.icon"
-            [color]="s.color">
+                [title]="s.title"
+                [value]="s.value"
+                [icon]="s.icon"
+                [color]="s.color">
             </app-stats-card>
         </div>
         </ng-container>
