@@ -13,7 +13,7 @@
             </tr>
         </thead>
 
-            <tbody>
+            <tbody *ngIf="studies.length > 0; else emptyState">
                 <tr *ngFor="let s of studies" class="block sm:table-row border-b 
                     sm:border-b-0 transition mb-4 sm:mb-0 rounded-lg sm:rounded-none
                     bg-white sm:bg-transparent shadow-sm sm:shadow-none"
@@ -116,5 +116,22 @@
                 </tr>
             </tbody>
         </table>
+
+        <ng-template #emptyState>
+            <tr >
+            <td colspan="6" class="h-30 text-center align-middle">
+            <div class="flex flex-col py-4 justify-center text-center text-slate-600">
+                <p class="font-medium text-slate-600">
+                    Nenhuma sessão encontrada
+                </p>
+
+                <p class="text-sm text-slate-400 mt-1">
+                    Crie uma nova sessão para iniciar seus estudos
+                </p>
+            </div>
+            </td>
+            </tr>
+        </ng-template>
+
     </div>
 </div>

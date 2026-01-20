@@ -9,7 +9,8 @@ import { LucideAngularModule, House, Goal, BookOpen, File, EllipsisVertical, Clo
   Settings, CircleUser, Calendar, Medal, Search, Filter, CheckCircle2, PlayCircle, Circle, Target, 
   Camera, Mail, Phone, MapPin, HandCoins, Rocket, ClipboardMinus, Crown, Activity, Pencil, 
   ScrollText, Settings2,
-  Menu, X} from 'lucide-angular';
+  Menu, X,
+  Plus} from 'lucide-angular';
 
 bootstrapApplication(App, {
   providers: [
@@ -55,7 +56,8 @@ bootstrapApplication(App, {
         ScrollText,
         Settings2,
         Menu,
-        X
+        X,
+        Plus
       })
     )
   ]

@@ -30,7 +30,7 @@
 
     <ul class="space-y-7 mt-12">
         <li>
-            <a href="/" routerLinkActive="active"
+            <a routerLink="/" routerLinkActive="active"
             class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
             <lucide-icon name="house"></lucide-icon>
             <span class="text-xl font-medium">Home</span>
@@ -38,15 +38,16 @@
         </li>
 
         <li>
-            <a routerLink="/estudos" routerLinkActive="active" 
-            class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
+            <a class="flex flex-f items-center gap-3 text-gray-400 cursor-not-allowed"
+            title="Em manutenção"
+            (click)="$event.preventDefault()">
             <lucide-icon name="book-open"></lucide-icon>
             <span class="text-xl font-medium">Estudos</span>
-        </a>
+            </a>
         </li>
 
         <li>
-            <a href="/metas" routerLinkActive="active"
+            <a routerLink="/metas" routerLinkActive="active"
             class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
             <lucide-icon name="goal"></lucide-icon>
             <span class="text-xl font-medium">Metas</span>
@@ -54,7 +55,7 @@
         </li>
 
         <li>
-            <a href="/relatorios" routerLinkActive="active"
+            <a routerLink="/relatorios" routerLinkActive="active"
             class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
             <lucide-icon name="clipboard-minus"></lucide-icon>
             <span class="text-xl font-medium">Relatórios</span>
@@ -62,7 +63,7 @@
         </li>
 
         <li>
-            <a href="/configuracoes" routerLinkActive="active"
+            <a routerLink="/configuracoes" routerLinkActive="active"
             class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
             <lucide-icon name="settings"></lucide-icon>
             <span class="text-xl font-medium">Configurações</span>

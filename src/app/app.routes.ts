@@ -14,7 +14,7 @@ export const routes: Routes = [
 
   { path: '', component: PrivateLayout, children: [
       { path: '', component: Home, data: { title: 'Home' } },
-      { path: 'estudos', component: Estudos, data: { title: 'Estudos' } },
+      // { path: 'estudos', component: Estudos, data: { title: 'Estudos' } },
       { path: 'metas', component: Metas, data: { title: 'Metas' } },
       { path: 'relatorios', component: Relatorios, data: { title: 'Relatórios' } },
       { path: 'configuracoes', component: Configuracoes, data: { title: 'Configurações' } },

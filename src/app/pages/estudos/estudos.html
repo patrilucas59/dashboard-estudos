@@ -11,6 +11,13 @@
             </p>
         </div>
 
+        <app-button-component
+            label="Iniciar Sessão"
+            icon="plus"
+            variant="primary"
+            (click)="onCreateSession()"
+        ></app-button-component>
+
     </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -31,17 +38,17 @@
 
     <div class="flex flex-col justify-center gap-3 mb-7">
         <h2 class="text-sm text-slate-600">
-            Próximas sessões e atividades planejadas
+            Próximas sessões a serem entregues
         </h2>
 
-        <app-studies-filters
+        <!-- <app-studies-filters
             variant="studies"
             [resultsCount]="filteredStudies.length"
             [searchQuery]="searchTerm"
             emptyMessage="Nenhuma matéria encontrada"
             (searchChange)="searchTerm = $event"
             (statusChange)="activeStatus = $event"
-        ></app-studies-filters>
+        ></app-studies-filters> -->
 
     </div>
 
