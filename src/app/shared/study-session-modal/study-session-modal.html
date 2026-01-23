@@ -1,0 +1,61 @@
+<div class="fixed inset-0 bg-black/40 flex items-center justify-center z-50" (click)="onClose()">
+
+  <div class="bg-white w-full max-w-md mx-4 rounded-lg shadow-lg p-6 space-y-6" (click)="$event.stopPropagation()">
+
+    <div class="flex justify-between items-center">
+        <div>
+            <h2 class="text-lg font-semibold text-slate-700">
+                Inicie sua nova sessão de estudo
+            </h2>
+            <p class="text-slate-500 text-sm">
+                Selecione a matéria e a atividade que deseja focar
+            </p>
+        </div>
+
+      <button 
+        class="text-slate-400 hover:text-slate-600 cursor-pointer"
+        (click)="onClose()"
+      >
+        <lucide-icon name="x" class="w-5 h-5"></lucide-icon>
+      </button>
+    </div>
+
+        <div class="space-y-1">
+            <label class="text-sm text-slate-600">Matéria</label>
+                <select 
+                    class="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    [(ngModel)]="selectedSubject">
+                    <option [ngValue]="undefined" disabled>Selecione uma matéria</option>
+                    <option *ngFor="let subject of subjects" [ngValue]="subject">
+                        {{ subject.name }}
+                    </option>
+                </select>
+        </div>
+
+        <div class="space-y-1">
+        <label class="text-sm text-slate-600">Atividade</label>
+            <select 
+                class="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                [(ngModel)]="selectedActivity"
+                [disabled]="!selectedSubject">
+                <option [ngValue]="undefined" disabled>Selecione uma atividade</option>
+                <option *ngFor="let activity of filteredActivities"
+                [ngValue]="activity">
+                    {{ activity.title }} - {{ activity.duration }} min
+                </option>
+            </select>
+        </div>
+
+        <div class="flex justify-end gap-2 pt-4">
+            <button class="cursor-pointer px-4 py-2 text-sm rounded-md border bg-red-500 text-white hover:bg-red-400" (click)="onClose()">
+                Cancelar
+            </button>
+
+            <button class="cursor-pointer px-4 py-2 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50"
+            [disabled]="!selectedSubject || !selectedActivity" (click)="onConfirm()">
+                Iniciar Sessão
+            </button>
+        </div>
+
+    </div>
+</div>

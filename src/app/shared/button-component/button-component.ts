@@ -7,7 +7,6 @@ import { LucideAngularComponent, LucideAngularModule } from 'lucide-angular';
   standalone: true,
   imports: [NgClass, LucideAngularModule],
   templateUrl: './button-component.html',
-  styleUrl: './button-component.css',
 })
 export class ButtonComponent {
 

@@ -54,7 +54,16 @@
 
         <app-studies-table
             [studies]="filteredStudies"
-            [statusConfig]="statusConfig">
+            [statusConfig]="statusConfig"
+            (delete)="onDeleteStudy($event)">
         </app-studies-table>
 
 </div>
+
+<app-study-session-modal
+    *ngIf="isSessionModalOpen"
+    [subjects]="subjects"
+    [activities]="activities"
+    (close)="onCloseSessionModal()"
+    (confirm)="onConfirmSession($event)">
+</app-study-session-modal>

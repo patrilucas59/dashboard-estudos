@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { UserProfileService } from '../../services/user-profile.service';
+import { UserProfileService } from '../../services/user-profile/user-profile.service';
 import { LucideAngularModule } from 'lucide-angular';
 import { NgIf } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
@@ -29,7 +29,7 @@ export class Configuracoes implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userProfileService: UserProfileService,
-    private toastr: ToastrService
+    private toast: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -54,14 +54,14 @@ export class Configuracoes implements OnInit {
     if (this.profileForm.valid) {
       try {
         this.userProfileService.saveProfile(this.profileForm.getRawValue());
-        this.toastr.success('Seus dados foram atualizados!');
+        this.toast.success('Seus dados foram atualizados!');
         this.profileForm.disable();
         this.isEditing = false;
       } catch (error) {
-        this.toastr.error('Erro ao salvar seus dados!');
+        this.toast.error('Erro ao salvar seus dados!');
       }
     } else {
-      this.toastr.error('Por favor, preencha todos os campos obrigatórios.');
+      this.toast.error('Por favor, preencha todos os campos obrigatórios.');
     }
   }
 

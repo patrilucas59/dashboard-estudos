@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Study } from '../../types/study';
 
 export type StudySessionStatus = | 'planejado' | 'em-andamento' | 'concluido';
 
-export interface StudySession {
+export interface StudySession extends Study {
   id: string;
   subject: string;
   topic: string;

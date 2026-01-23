@@ -38,9 +38,8 @@
         </li>
 
         <li>
-            <a class="flex flex-f items-center gap-3 text-gray-400 cursor-not-allowed"
-            title="Em manutenção"
-            (click)="$event.preventDefault()">
+            <a routerLink="/estudos" routerLinkActive="active"
+            class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition">
             <lucide-icon name="book-open"></lucide-icon>
             <span class="text-xl font-medium">Estudos</span>
             </a>

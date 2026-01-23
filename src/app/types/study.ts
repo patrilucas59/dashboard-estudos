@@ -9,6 +9,6 @@ export interface Study {
   topic: string;
   date: string;
   startTime: string;
-  duration: string;
+  duration: number | null;
   status: StudyStatus;
 }
