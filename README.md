@@ -63,11 +63,7 @@
 ---
 ![Relatório - Foco +](public/foco-plus.png)
 
-### Rodando localmente
+### Onde acessar?
 
 A aplicação estará disponível em:
-http://localhost:4200
-
-```bash
-npm install
-ng serve
+https://foco-plus.vercel.app/
