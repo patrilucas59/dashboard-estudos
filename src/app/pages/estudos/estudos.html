@@ -55,7 +55,7 @@
         <app-studies-table
             [studies]="filteredStudies"
             [statusConfig]="statusConfig"
-            (delete)="onDeleteStudy($event)">
+            (delete)="onRequestDeleteStudy($event)">
         </app-studies-table>
 
 </div>
@@ -67,3 +67,11 @@
     (close)="onCloseSessionModal()"
     (confirm)="onConfirmSession($event)">
 </app-study-session-modal>
+
+<app-confirm-modal
+    *ngIf="isDeleteModalOpen"
+    title="Excluir Sessão"
+    message="Tem certeza que deseja excluir esta sessão de estudo?"
+    (confirm)="onConfirmDelete()"
+    (cancel)="onCancelDelete()">
+</app-confirm-modal>

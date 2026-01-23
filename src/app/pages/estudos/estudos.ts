@@ -13,11 +13,21 @@ import { StudiesTable } from '../../components/studies-table/studies-table';
 import { ButtonComponent } from '../../shared/button-component/button-component';
 import { StudySessionModal } from '../../shared/study-session-modal/study-session-modal';
 import { ToastrService } from 'ngx-toastr';
+import { ConfirmModal } from '../../shared/confirm-modal/confirm-modal';
 
 @Component({
   selector: 'app-estudos',
   standalone: true,
-  imports: [StudiesTable, StatsCard, LucideAngularModule, NgFor, ButtonComponent, NgIf, StudySessionModal],
+  imports: [
+    StudiesTable, 
+    StatsCard, 
+    LucideAngularModule, 
+    NgFor, 
+    ButtonComponent, 
+    NgIf, 
+    StudySessionModal, 
+    ConfirmModal
+  ],
   templateUrl: './estudos.html',
 })
 export class Estudos implements OnInit {
@@ -133,12 +143,27 @@ export class Estudos implements OnInit {
     this.isSessionModalOpen = false;
   }
 
-  onDeleteStudy(id: string): void {
-    const confirmed = confirm('Tem certeza que deseja excluir esta sessão de estudo?');
-    if (!confirmed) return;
+  isDeleteModalOpen = false;
+  studyDeleteId: string | null = null;
 
-    this.storage.remove(id);
+  onRequestDeleteStudy(id: string): void {
+    this.studyDeleteId = id;
+    this.isDeleteModalOpen = true;
+  }
+
+  onConfirmDelete(): void {
+    if (!this.studyDeleteId) return;
+
+    this.storage.remove(this.studyDeleteId);
     this.loadStudies();
+
+    this.studyDeleteId = null;
+    this.isDeleteModalOpen = false;
+  }
+
+  onCancelDelete(): void {
+    this.studyDeleteId = null;
+    this.isDeleteModalOpen = false;
   }
 
   get filteredStudies(): Study[] {
