@@ -2,12 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-confirm-modal',
+  selector: 'app-remove-session-modal',
   standalone: true,
   imports: [],
-  templateUrl: './confirm-modal.html',
+  templateUrl: './remove-session-modal.html',
 })
-export class ConfirmModal {
+export class RemoveSessionModal {
 
   constructor(private toastr: ToastrService) {}
 

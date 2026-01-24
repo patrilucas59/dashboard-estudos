@@ -68,10 +68,10 @@
     (confirm)="onConfirmSession($event)">
 </app-study-session-modal>
 
-<app-confirm-modal
+<app-remove-session-modal
     *ngIf="isDeleteModalOpen"
     title="Excluir Sessão"
     message="Tem certeza que deseja excluir esta sessão de estudo?"
     (confirm)="onConfirmDelete()"
     (cancel)="onCancelDelete()">
-</app-confirm-modal>
+</app-remove-session-modal>

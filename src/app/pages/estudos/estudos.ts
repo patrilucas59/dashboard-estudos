@@ -13,7 +13,7 @@ import { StudiesTable } from '../../components/studies-table/studies-table';
 import { ButtonComponent } from '../../shared/button-component/button-component';
 import { StudySessionModal } from '../../shared/study-session-modal/study-session-modal';
 import { ToastrService } from 'ngx-toastr';
-import { ConfirmModal } from '../../shared/confirm-modal/confirm-modal';
+import { RemoveSessionModal } from '../../shared/remove-session-modal/remove-session-modal';
 
 @Component({
   selector: 'app-estudos',
@@ -26,7 +26,7 @@ import { ConfirmModal } from '../../shared/confirm-modal/confirm-modal';
     ButtonComponent, 
     NgIf, 
     StudySessionModal, 
-    ConfirmModal
+    RemoveSessionModal
   ],
   templateUrl: './estudos.html',
 })
